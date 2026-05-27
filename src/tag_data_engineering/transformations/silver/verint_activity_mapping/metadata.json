@@ -1,7 +1,12 @@
 {
   "schema": "silver",
-  "pipeline_group": "verint",
+  "pipeline_group": "weekly_blob",
   "table": "verint_activity_mapping",
-  "merge_key": ["activity_mapping_id", "source_file_name"],
-  "dependencies": ["bronze.verint_activity_mapping"]
+  "merge_key": [
+    "activity_mapping_id",
+    "source_file_name"
+  ],
+  "dependencies": [
+    "bronze.verint_activity_mapping"
+  ]
 }

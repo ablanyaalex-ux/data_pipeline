@@ -1,8 +1,11 @@
 {
   "schema": "bronze",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "puzzel_call_event_codes",
   "entity": "puzzel_call_event_codes",
-  "merge_key": ["event_type", "result_code"],
+  "merge_key": [
+    "event_type",
+    "result_code"
+  ],
   "source_format": "jsonl"
 }

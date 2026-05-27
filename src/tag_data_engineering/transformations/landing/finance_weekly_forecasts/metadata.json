@@ -1,6 +1,6 @@
 {
   "entity": "finance_weekly_forecasts",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "extraction_mode": "incremental",
   "max_file_size_mb": 100,
   "output_format": "jsonl",

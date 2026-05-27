@@ -9,6 +9,7 @@ from tag_data_engineering.models import SetupMetadata
 from tag_data_engineering.models import TransformationMetadata
 from tag_data_engineering.pipeline.models import ActivityConfig
 from tag_data_engineering.pipeline.models import DiscoveredJob
+from tag_data_engineering.pipeline.models import IfConditionActivity
 from tag_data_engineering.pipeline.models import InvokePipelineActivity
 from tag_data_engineering.pipeline.models import Layer
 from tag_data_engineering.pipeline.models import PipelineActivity
@@ -26,6 +27,16 @@ def _parse_dependencies_from_json(metadata_file: Path) -> list[str]:
         else:
             parsed.append(dep)
     return parsed
+
+
+def _due_group_expression(groups: list[str]) -> str:
+    if not groups:
+        return "@greater(length(json(activity('setup_metadata').output.result.exitValue).due_groups), 0)"
+    expressions = [f"contains(json(activity('setup_metadata').output.result.exitValue).due_groups, '{group}')" for group in sorted(groups)]
+    condition = expressions[0]
+    for expression in expressions[1:]:
+        condition = f"or({condition}, {expression})"
+    return f"@{condition}"
 
 
 class PipelineDiscoverer:
@@ -243,6 +254,7 @@ class PipelineDiscoverer:
         )
 
         groups = sorted({key.split("_", 1)[1] for key in subpipelines if not key.startswith("gold")})
+        group_condition_names: list[str] = []
 
         for group in groups:
             landing_key = f"landing_{group}"
@@ -250,17 +262,22 @@ class PipelineDiscoverer:
             silver_key = f"silver_{group}"
 
             same_group_keys = {landing_key, bronze_key, silver_key}
-            prev_dep = "setup_metadata"
+            true_activities: list[PipelineActivity | InvokePipelineActivity] = []
+            prev_dep = ""
+            condition_dependencies = ["setup_metadata"]
             for key in [landing_key, bronze_key, silver_key]:
                 if key not in subpipelines:
                     continue
                 sub = subpipelines[key]
                 activity_name = f"invoke_{key}"
-                deps = [prev_dep]
                 for dep_key in sorted(sub.upstream_subpipeline_keys):
                     if dep_key in subpipelines and dep_key not in same_group_keys:
-                        deps.append(f"invoke_{dep_key}")
-                activities.append(
+                        upstream_group = dep_key.split("_", 1)[1]
+                        upstream_condition = f"if_group_due_{upstream_group}"
+                        if upstream_condition not in condition_dependencies:
+                            condition_dependencies.append(upstream_condition)
+                deps = [prev_dep] if prev_dep else []
+                true_activities.append(
                     InvokePipelineActivity(
                         name=activity_name,
                         pipeline_id=sub.deployed_id or "",
@@ -269,24 +286,61 @@ class PipelineDiscoverer:
                     )
                 )
                 prev_dep = activity_name
+            if not true_activities:
+                continue
 
-        gold_key = "gold_all"
-        if gold_key in subpipelines:
-            silver_invoke_names = [a.name for a in activities if isinstance(a, InvokePipelineActivity) and a.name.startswith("invoke_silver_")]
-            activities.append(
-                InvokePipelineActivity(
-                    name="invoke_gold",
-                    pipeline_id=subpipelines[gold_key].deployed_id or "",
-                    dependencies=silver_invoke_names,
+            success_dependencies = [prev_dep] if prev_dep else []
+            true_activities.append(
+                PipelineActivity(
+                    layer=Layer.SETUP,
+                    entity="pipeline_group_success",
+                    name_override=f"setup_pipeline_group_success_{group}",
+                    dependencies=success_dependencies,
                     config=config,
+                    metadata=SetupMetadata(),
+                    parameters={
+                        "pipeline_group": group,
+                        "orchestrator_run_id": "@json(activity('setup_metadata').output.result.exitValue).orchestrator_run_id",
+                    },
                 )
             )
+            condition_name = f"if_group_due_{group}"
+            activities.append(
+                IfConditionActivity(
+                    name=condition_name,
+                    expression=_due_group_expression([group]),
+                    dependencies=condition_dependencies,
+                    if_true_activities=true_activities,
+                )
+            )
+            group_condition_names.append(condition_name)
 
-        if any(isinstance(activity, InvokePipelineActivity) and activity.name == "invoke_gold" for activity in activities):
-            lab_dependencies = ["invoke_gold"]
+        gold_keys = sorted(key for key in subpipelines if key.startswith("gold_"))
+        gold_condition_names: list[str] = []
+        for key in gold_keys:
+            sub = subpipelines[key]
+            upstream_groups = sorted({dep_key.split("_", 1)[1] for dep_key in sub.upstream_subpipeline_keys if not dep_key.startswith("gold_")})
+            condition_name = "if_gold_due" if key == "gold_all" else f"if_{key}_due"
+            activities.append(
+                IfConditionActivity(
+                    name=condition_name,
+                    expression=_due_group_expression(upstream_groups),
+                    dependencies=group_condition_names or ["setup_metadata"],
+                    if_true_activities=[
+                        InvokePipelineActivity(
+                            name="invoke_gold" if key == "gold_all" else f"invoke_{key}",
+                            pipeline_id=subpipelines[key].deployed_id or "",
+                            config=config,
+                        )
+                    ],
+                )
+            )
+            gold_condition_names.append(condition_name)
+
+        if gold_condition_names:
+            lab_dependencies = gold_condition_names
         else:
-            silver_invoke_names = [a.name for a in activities if isinstance(a, InvokePipelineActivity) and a.name.startswith("invoke_silver_")]
-            lab_dependencies = silver_invoke_names or ["setup_metadata"]
+            lab_dependencies = group_condition_names or ["setup_metadata"]
 
         activities.append(
             PipelineActivity(

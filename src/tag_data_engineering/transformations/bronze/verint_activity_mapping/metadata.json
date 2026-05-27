@@ -1,8 +1,11 @@
 {
   "schema": "bronze",
-  "pipeline_group": "verint",
+  "pipeline_group": "weekly_blob",
   "table": "verint_activity_mapping",
   "entity": "verint_activity_mapping",
-  "merge_key": ["ActivityMappingID", "source_file_name"],
+  "merge_key": [
+    "ActivityMappingID",
+    "source_file_name"
+  ],
   "source_format": "jsonl"
 }

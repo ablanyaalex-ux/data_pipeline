@@ -1,6 +1,7 @@
 from tag_data_engineering import constants
 from tag_data_engineering.deployment.fabric_connection import FabricConnection
 from tag_data_engineering.extractors.copyjob_extractor import CopyJobExtractorConfig
+from tag_data_engineering.pipeline.models import IfConditionActivity
 from tag_data_engineering.pipeline.models import InvokePipelineActivity
 from tag_data_engineering.pipeline.models import Layer
 from tag_data_engineering.pipeline.models import PipelineActivity
@@ -17,7 +18,9 @@ def serialize_pipeline_to_fabric(
 ) -> dict:
     activities = []
     for activity in pipeline.activities:
-        if isinstance(activity, InvokePipelineActivity):
+        if isinstance(activity, IfConditionActivity):
+            activities.append(_serialize_if_condition_activity_to_fabric(activity, workspace_id, notebook_id, lakehouse_id, fabric_conn, copyjob_ids))
+        elif isinstance(activity, InvokePipelineActivity):
             activities.append(_serialize_invoke_pipeline_activity_to_fabric(activity, workspace_id))
         else:
             activities.append(_serialize_activity_to_fabric(activity, workspace_id, notebook_id, lakehouse_id, fabric_conn, copyjob_ids))
@@ -91,6 +94,21 @@ def _serialize_notebook_activity_to_fabric(
     hours = int(activity.config.timeout_hours)
     minutes = int((activity.config.timeout_hours - hours) * 60)
     timeout_str = f"0.{hours:02d}:{minutes:02d}:00"
+    parameters = {
+        "layer": {
+            "value": activity.layer.value,
+            "type": "string",
+        },
+        "entity": {
+            "value": activity.entity,
+            "type": "string",
+        },
+    }
+    for key, value in activity.parameters.items():
+        parameters[key] = {
+            "value": value,
+            "type": "Expression" if isinstance(value, str) and value.startswith("@") else "string",
+        }
     return {
         "name": activity.name,
         "type": "TridentNotebook",
@@ -105,20 +123,53 @@ def _serialize_notebook_activity_to_fabric(
         "typeProperties": {
             "notebookId": notebook_id,
             "workspaceId": workspace_id,
-            "parameters": {
-                "layer": {
-                    "value": activity.layer.value,
-                    "type": "string",
-                },
-                "entity": {
-                    "value": activity.entity,
-                    "type": "string",
-                },
-            },
+            "parameters": parameters,
             "defaultLakehouse": {
                 "workspaceId": workspace_id,
                 "artifactId": lakehouse_id,
             },
+        },
+    }
+
+
+def _serialize_if_condition_activity_to_fabric(
+    activity: IfConditionActivity,
+    workspace_id: str,
+    notebook_id: str,
+    lakehouse_id: str,
+    fabric_conn: FabricConnection,
+    copyjob_ids: dict[str, str] | None = None,
+) -> dict:
+    depends_on = [
+        {
+            "activity": dep,
+            "dependencyConditions": ["Succeeded"],
+        }
+        for dep in activity.dependencies
+    ]
+    if_true_activities = [
+        _serialize_invoke_pipeline_activity_to_fabric(child, workspace_id)
+        if isinstance(child, InvokePipelineActivity)
+        else _serialize_activity_to_fabric(child, workspace_id, notebook_id, lakehouse_id, fabric_conn, copyjob_ids)
+        for child in activity.if_true_activities
+    ]
+    if_false_activities = [
+        _serialize_invoke_pipeline_activity_to_fabric(child, workspace_id)
+        if isinstance(child, InvokePipelineActivity)
+        else _serialize_activity_to_fabric(child, workspace_id, notebook_id, lakehouse_id, fabric_conn, copyjob_ids)
+        for child in activity.if_false_activities
+    ]
+    return {
+        "name": activity.name,
+        "type": "IfCondition",
+        "dependsOn": depends_on,
+        "typeProperties": {
+            "expression": {
+                "value": activity.expression,
+                "type": "Expression",
+            },
+            "ifTrueActivities": if_true_activities,
+            "ifFalseActivities": if_false_activities,
         },
     }
 

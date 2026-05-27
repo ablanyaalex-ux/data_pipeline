@@ -32,6 +32,7 @@ No `data.sql` needed for landing.
 - **Gold** is the only layer where `dim_` and `fact_` prefixes are used
 - Avoid exposing vendor or system names in gold table names — use business-facing names (e.g. `dim_call_queues` not `dim_puzzel_queues`)
 - All table names across all layers must be **plural** (e.g. `cms_complaints`, `puzzel_call_event_codes`, `ref_schemes`, `dim_cases`, `fact_case_assignments`)
+- Blob/file-sourced landing, bronze, and silver entities use `pipeline_group: "weekly_blob"` unless explicitly configured otherwise in `transformations/_pipeline_groups/metadata.json`
 
 ---
 
@@ -60,7 +61,7 @@ No `data.sql` needed for bronze (ingested directly from landing JSON).
   ]
 }
 ```
-`pipeline_group` matches the source system (e.g. `"cms"`, `"popla"`, `"puzzel"`).
+`pipeline_group` matches the source system (e.g. `"cms"`, `"popla"`, `"puzzel"`), except blob/file-sourced entities, which use `"weekly_blob"`.
 
 ## Gold (`transformations/gold/<entity>/metadata.json`)
 ```json
@@ -75,7 +76,7 @@ No `data.sql` needed for bronze (ingested directly from landing JSON).
   ]
 }
 ```
-- `pipeline_group` is always `"all"` for gold
+- `pipeline_group` is normally `"all"` for shared gold models; source-specific gold models may use a source-specific group
 - `table` follows `dim_<name>` or `fact_<name>` convention
 - `dependencies` lists every `silver.*` or `gold.*` table referenced in `data.sql`
 - `merge_key` is the primary key column of the output table (e.g. `"case_id"`, `"case_status_transition_id"`)

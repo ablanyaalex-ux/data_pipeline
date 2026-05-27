@@ -1,8 +1,14 @@
 {
   "schema": "bronze",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "finance_monthly_forecasts",
   "entity": "finance_monthly_forecasts",
-  "merge_key": ["year","month","label","case_status","source_file_name"],
+  "merge_key": [
+    "year",
+    "month",
+    "label",
+    "case_status",
+    "source_file_name"
+  ],
   "source_format": "jsonl"
 }

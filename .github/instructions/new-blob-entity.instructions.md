@@ -22,7 +22,7 @@ tests_integration/external_providers/tagdataengineering/ingest-data/<entity>/<en
 ```json
 {
   "entity": "<entity>",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "extraction_mode": "full_refresh",
   "max_file_size_mb": 100,
   "output_format": "jsonl",
@@ -41,7 +41,7 @@ tests_integration/external_providers/tagdataengineering/ingest-data/<entity>/<en
 ```json
 {
   "schema": "bronze",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "<entity>",
   "entity": "<entity>",
   "merge_key": ["<col1>", "<col2>"],
@@ -56,7 +56,7 @@ tests_integration/external_providers/tagdataengineering/ingest-data/<entity>/<en
 ```json
 {
   "schema": "silver",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "<entity>",
   "merge_key": ["<col1>", "<col2>"],
   "dependencies": ["bronze.<entity>"]
@@ -79,7 +79,7 @@ SQL conventions:
 }
 ```
 - Generate a surrogate key with `SHA2(CONCAT(col1, '|', col2, '|', ...), 256) AS <name>_id`
-- `pipeline_group` is always `"all"` for gold
+- `pipeline_group` is normally `"all"` for shared gold models; source-specific gold models may use a source-specific group
 
 ### 6. Integration test expected CSVs
 

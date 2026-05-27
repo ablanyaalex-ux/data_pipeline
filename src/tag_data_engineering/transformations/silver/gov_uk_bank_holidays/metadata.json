@@ -1,9 +1,12 @@
 {
   "schema": "silver",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "gov_uk_bank_holidays",
   "entity": "gov_uk_bank_holidays",
-  "merge_key": ["region", "holiday_date"],
+  "merge_key": [
+    "region",
+    "holiday_date"
+  ],
   "dependencies": [
     "bronze.gov_uk_bank_holidays"
   ]

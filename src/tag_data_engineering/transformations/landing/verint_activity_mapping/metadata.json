@@ -1,6 +1,6 @@
 {
   "entity": "verint_activity_mapping",
-  "pipeline_group": "verint",
+  "pipeline_group": "weekly_blob",
   "extractor": "blob",
   "extraction_mode": "incremental",
   "output_format": "jsonl",
