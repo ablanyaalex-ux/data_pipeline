@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "postgres_cms",
+  "table": "cms_tasks",
+  "merge_key": "id",
+  "dependencies": [
+    "bronze.cms_tasks"
+  ]
+}

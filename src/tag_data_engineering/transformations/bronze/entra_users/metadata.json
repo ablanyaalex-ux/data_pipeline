@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "other",
+  "table": "entra_users",
+  "entity": "entra_users",
+  "merge_key": "id",
+  "source_format": "jsonl"
+}

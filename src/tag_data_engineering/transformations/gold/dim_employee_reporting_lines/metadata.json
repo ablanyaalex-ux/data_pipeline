@@ -1,0 +1,10 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_employee_reporting_lines",
+  "merge_key": "hierarchy_id",
+  "dependencies": [
+    "silver.myhr_hierarchy_history",
+    "silver.entra_users"
+  ]
+}

@@ -1,0 +1,7 @@
+id,decision_id,issue,outcome,created_at,updated_at
+1,1,Billing Dispute,upheld,2024-01-20 10:00:00,2024-01-20 10:00:00
+2,1,Service Quality,not_upheld,2024-01-20 10:05:00,2024-01-20 10:05:00
+3,2,Contract Terms,upheld,2024-01-22 14:00:00,2024-01-22 14:00:00
+4,3,Customer Service,partially_upheld,2024-01-25 09:00:00,2024-01-25 11:30:00
+5,4,Switching Issues,upheld,2024-02-01 15:00:00,2024-02-01 15:00:00
+6,4,Meter Reading,not_upheld,2024-02-01 15:30:00,2024-02-01 15:30:00

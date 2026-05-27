@@ -1,0 +1,73 @@
+Active,ActiveEnd,ActiveStart,ActivityGrouping,ActivityMappingID,ActivityName,ActivityType,HelloWorld,source_file_name
+1,,2023-01-01,Customer Service,1,Customer Call,Inbound,,activity_mapping_20260206.csv
+1,NULL,01/01/2025,Internal,1,121,121 / Coaching,,activity_mapping_20260209.csv
+1,,2023-01-01,Quality Assurance,10,Quality Review,Internal,,activity_mapping_20260206.csv
+1,NULL,01/01/2025,Productive,10,CMS Whitemail,Back Office,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,11,Coaching,121 / Coaching,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,12,Community Brief,Meeting,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,13,Community Meeting,Meeting,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,14,Conference,TAG Event,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Productive,15,Consumer,Back Office,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,ASH,16,Dependency Leave,Absence,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Productive,17,DRE Casework,Casework,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,18,DRE Comms Project,Projects,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,19,DRE TOM Activity,TOM Support,,activity_mapping_20260209.csv
+1,,2023-01-01,Customer Service,2,Customer Email,Email,,activity_mapping_20260206.csv
+1,NULL,01/01/2025,NULL,2,30 Minute Lunch,Lunch,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,ASH,20,Emergency Leave,Absence,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,21,Engagement Session,Meeting,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,22,Floorwalking,Offline,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,23,IT Issues,System Issues,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,24,Listening Session,Meeting,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,ASH,25,LTS,Sickness,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,NULL,26,Lunch,Lunch,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,ASH,27,Maternity,Absence,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,28,Meeting,Meeting,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Productive,29,Networks,Back Office,,activity_mapping_20260209.csv
+1,,2023-01-01,Management,3,Manager Review,Internal,,activity_mapping_20260206.csv
+1,NULL,01/01/2025,ASH,3,Annual Leave,Holiday,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,30,Offline,Offline,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Productive,31,Off System,Casework,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,32,OT Break,Break,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Front Office,33,OT Call Taking,OT Productive,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Casework,34,OT DRE Casework,OT Productive,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Back Office,35,OT FRS BackOffice,OT Productive,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,ASH,36,Other Paid,Absence,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,ASH,37,Other Unpaid,Absence,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Productive,38,Outbound,Front Office,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Productive,39,Parking,Appeals,,activity_mapping_20260209.csv
+0,2023-12-31,2023-01-01,Development,4,Training Session,Internal,,activity_mapping_20260206.csv
+1,NULL,01/01/2025,ASH,4,AWOL,Absence,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Productive,40,Parking Email,Back Office,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Productive,41,Parking Phone,Front Office,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Productive,42,Parking Whitemail,Back Office,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,ASH,43,Paternity,Absence,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,ASH,44,Personal Appointment,Absence,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,45,Project Activity,Projects,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,ASH,46,Public Holiday,Holiday,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,47,RA Coach Approved,RA,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,ASH,48,Sick,Sickness,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,49,Stand Up,Meeting,,activity_mapping_20260209.csv
+1,,2023-01-01,IT,5,System Maintenance,Internal,,activity_mapping_20260206.csv
+1,NULL,01/01/2025,ASH,5,Bereavement Leave,Absence,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,50,TAGmas,TAG Event,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Productive,51,Tasks,Back Office,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,52,Team Meeting,Meeting,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,53,Town Hall,Meeting,,activity_mapping_20260209.csv
+1,NULL,01/01/2025,Internal,54,Training,Training,,activity_mapping_20260209.csv
+1,NULL,09/12/2025,Internal,55,Case Target Reduction,Target Reduction,,activity_mapping_20260209.csv
+1,NULL,09/12/2025,Internal,56,Christmas Lunch Extension,Break,12,activity_mapping_20260209.csv
+1,NULL,09/12/2025,Productive,57,FRS,FRS Core,,activity_mapping_20260209.csv
+1,NULL,09/12/2025,Internal,58,Project Casework,Projects,,activity_mapping_20260209.csv
+1,NULL,09/12/2025,NULL,59,Split Shift,NULL,,activity_mapping_20260209.csv
+1,,2023-06-01,Customer Service,6,Customer Chat,Chat,,activity_mapping_20260206.csv
+1,NULL,01/01/2025,Internal,6,Break,Break,,activity_mapping_20260209.csv
+1,NULL,09/12/2025,ASH,60,TOIL,Absence,,activity_mapping_20260209.csv
+1,NULL,09/12/2025,ASH,61,Voluntary Time Off,Absence,,activity_mapping_20260209.csv
+1,NULL,09/12/2025,Internal,62,Volunteering,Offline,13,activity_mapping_20260209.csv
+1,,2023-01-01,Management,7,Team Meeting,Internal,,activity_mapping_20260206.csv
+1,NULL,01/01/2025,Productive,7,CAB,Back Office,,activity_mapping_20260209.csv
+1,,2023-01-01,Personal,8,Break Time,Break,,activity_mapping_20260206.csv
+1,NULL,01/01/2025,Productive,8,Call Taking,Front Office,,activity_mapping_20260209.csv
+1,,2023-01-01,Personal,9,Lunch Break,Break,,activity_mapping_20260206.csv
+1,NULL,01/01/2025,Productive,9,CMS Email,Back Office,,activity_mapping_20260209.csv

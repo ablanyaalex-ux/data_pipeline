@@ -1,0 +1,4 @@
+agent_id,chat_master_user_id,chat_role,customer_key,deleted,dte_updated,email,full_name,mobile,puzzel_id,unblockable_group,unblockable_role,user_name,user_num,usergroup_id,usergroup_name
+1001,501,,12345,False,2025-12-01T09:15:00,agent.one@test.example,Test Agent One,+447700900001,PUZ-1001,0,0,AgentOne,10001,10,Ops Team A
+1002,502,0,23456,False,2025-12-02T10:30:00,agent.two@test.example,Test Agent Two,+447700900002,PUZ-1002,0,0,AgentTwo,10002,10,Ops Team A
+1003,503,1,34567,False,2025-12-03T11:45:00,agent.three@test.example,Test Agent Three,+447700900003,PUZ-1003,1,1,AgentThree,10003,20,Ops Team B

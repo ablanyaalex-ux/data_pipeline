@@ -1,0 +1,17 @@
+{
+  "entity": "cms_tasks",
+  "pipeline_group": "postgres_cms",
+  "extraction_mode": "incremental",
+  "max_file_size_mb": 512,
+  "output_format": "jsonl",
+  "extractor": "postgres",
+  "extractor_config": {
+    "source_secret_key": "lumin-prod-aws-cms-psql-credentials",
+    "source_schema": "public",
+    "source_table": "tasks",
+    "incremental": {
+      "column": "updated_at",
+      "column_type": "DateTime"
+    }
+  }
+}

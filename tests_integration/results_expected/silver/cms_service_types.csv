@@ -1,0 +1,9 @@
+id,name,sector_id,category_id,is_active,is_voluntary_jurisdiction
+1,Electricity Supply,1,1,True,False
+2,Gas Supply,1,1,True,False
+3,Dual Fuel,1,1,True,False
+4,Mobile Phone,2,2,True,False
+5,Broadband,2,2,True,False
+6,Landline,2,2,True,False
+7,Home Insurance,3,3,True,True
+8,Motor Insurance,3,3,False,True

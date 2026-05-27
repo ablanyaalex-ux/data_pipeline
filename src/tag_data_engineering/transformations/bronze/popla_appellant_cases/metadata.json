@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "other",
+  "table": "popla_appellant_cases",
+  "entity": "popla_appellant_cases",
+  "merge_key": "case_id",
+  "source_format": "jsonl"
+}

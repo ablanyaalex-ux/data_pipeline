@@ -1,0 +1,13 @@
+{
+  "entity": "gov_uk_bank_holidays",
+  "pipeline_group": "other",
+  "extraction_mode": "full_refresh",
+  "max_file_size_mb": 100,
+  "output_format": "jsonl",
+  "extractor": "blob",
+  "extractor_config": {
+    "source_container": "ingest-data",
+    "source_folder": "gov_uk_bank_holidays",
+    "blob_account_url_keyvault": "data-ingest-storage-credentials"
+  }
+}

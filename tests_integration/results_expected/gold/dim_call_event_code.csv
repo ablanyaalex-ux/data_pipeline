@@ -1,0 +1,5 @@
+call_event_code_id,event_type,result_code,event_description,is_dropped,is_queue_answered,is_timed_out,is_volume,is_call_answered
+b9370c236a98728dec4ba6d8dea3eb8f821fd6f9074e050b090680454754f99e,c,k,Call - Answered,0,0,0,0,1
+c938b40fd4e2d839441747b4c45e9f82b17577040c27d4df4f90e62da0d81834,q,k,Queue - Answered,0,1,0,1,0
+db1722dfcf034eb8a517cf5de3ce93bcbe98af022701b994436181266ddcf32e,q,t,Queue - Timed Out,0,0,1,0,0
+ff7f6529b18ed2cf50481d3fd943acb7e2e9da46ba2a8e8c33decf8f3553cdbb,q,h,Queue - Dropped,1,0,0,1,0

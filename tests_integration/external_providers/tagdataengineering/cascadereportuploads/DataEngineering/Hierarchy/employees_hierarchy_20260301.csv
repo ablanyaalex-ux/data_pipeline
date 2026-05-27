@@ -1,0 +1,3 @@
+Employee Id,Firstname,Hierarchy Level 2,Hierarchy Level 4,Job Title,Last Contractual Day,Line Manager,Office,Place of Work,Sector,Skip Line Manager,Surname,Weekly Hours,hierarchylevel3,hierarchylevel5,hierarchylevel6,windowsusername
+123,PersonA,Operations,Investigations,Lead Case Handler,,"(000543) PersonD UserFour Five",OfficeA,Hybrid,SectorAlpha,"(000742) PersonE UserFive",UserOne,37.5,CustomerServices,SeniorStaff,,usera
+999,PersonH,Operations,Escalations,Case Analyst,,"(000543) PersonD UserFour Five",OfficeC,Hybrid,SectorGamma,,UserEight,35.0,CustomerServices,SpecialProjects,,userh

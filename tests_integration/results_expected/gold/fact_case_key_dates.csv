@@ -1,0 +1,7 @@
+case_id,first_investigate_date,first_appeal_date,first_appeal_pending_date,first_appeal_assigned_date,first_decision_publish_date
+1001,2023-01-10 10:00:00,2023-02-01 10:00:00,2023-02-01 10:00:00,,2023-01-15 10:30:00
+1002,2023-02-15 14:00:00,2023-03-15 09:30:00,,,
+1003,,2023-04-10 11:00:00,,,
+1004,,,,,
+1005,,,,,
+1006,,,,,

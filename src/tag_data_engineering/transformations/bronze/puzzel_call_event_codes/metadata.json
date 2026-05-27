@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "other",
+  "table": "puzzel_call_event_codes",
+  "entity": "puzzel_call_event_codes",
+  "merge_key": ["event_type", "result_code"],
+  "source_format": "jsonl"
+}

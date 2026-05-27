@@ -1,0 +1,12 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "fact_employee_activities",
+  "merge_key": "employee_activity_id",
+  "dependencies": [
+    "silver.verint_employee_adherence_expected_activities",
+    "silver.verint_activity_mapping",
+    "silver.entra_users",
+    "gold.dim_employee_reporting_lines"
+  ]
+}

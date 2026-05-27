@@ -1,0 +1,4 @@
+budget_type,budget_version,budget_year,budget_month,budget_sector,budget_case_status,budget_case_volume,budget_case_volume_gbp,source_file_name,source_file_date
+Budget,2026 Budget (monthly),2026,2026-01-01,Communications,Fcast_AddChecks,1985.100000,99.100000,finance_monthly_budgets_20260101.csv,2026-01-01
+Budget,2026 Budget (monthly),2026,2026-02-01,Communications,Fcast_AddChecks,1670.100000,88.100000,finance_monthly_budgets_20260101.csv,2026-01-01
+Budget,2026 Budget (monthly),2026,2026-03-01,Communications,Fcast_AddChecks,1234.100000,-666.100000,finance_monthly_budgets_20260101.csv,2026-01-01

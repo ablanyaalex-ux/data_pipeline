@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_call_event_code",
+  "merge_key": "call_event_code_id",
+  "dependencies": [
+    "silver.puzzel_call_event_codes"
+  ]
+}

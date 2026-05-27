@@ -1,0 +1,299 @@
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    environment:
+      - MINIO_ROOT_USER=minioadmin
+      - MINIO_ROOT_PASSWORD=minioadmin
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    networks:
+      - spark-network
+    profiles:
+      - test
+      - integration
+
+  # CMS MySQL Mock - contains test data for CMS pipeline (integration tests only)
+  cms-mysql:
+    build:
+      context: ./tests_integration/external_providers/cms_mysql
+      dockerfile: Dockerfile
+    container_name: cms-mysql-integration
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=cms_prod
+    ports:
+      - "3307:3306"
+    networks:
+      - spark-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    tmpfs:
+      # NOTE(krishan711): Using tmpfs for /var/lib/mysql means MySQL data lives only in memory and is recreated fresh from the init scripts every time the container starts
+      - /var/lib/mysql
+    profiles:
+      - integration
+
+  # POPLA MySQL Mock - contains test data for CMS pipeline (integration tests only)
+  popla-mysql:
+    build:
+      context: ./tests_integration/external_providers/popla_mysql
+      dockerfile: Dockerfile
+    container_name: popla-mysql-integration
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=popla_prod
+    ports:
+      - "3308:3306"
+    networks:
+      - spark-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    tmpfs:
+      # NOTE(krishan711): Using tmpfs for /var/lib/mysql means MySQL data lives only in memory and is recreated fresh from the init scripts every time the container starts
+      - /var/lib/mysql
+    profiles:
+      - integration
+
+  # ORN ic_portal MySQL Mock - contains test data for ORN ic_portal pipeline (integration tests only)
+  orn-ic-portal-mysql:
+    build:
+      context: ./tests_integration/external_providers/orn_ic_portal_mysql
+      dockerfile: Dockerfile
+    container_name: orn-ic-portal-mysql-integration
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=ic_portal
+    ports:
+      - "3309:3306"
+    networks:
+      - spark-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    tmpfs:
+      # NOTE(krishan711): Using tmpfs for /var/lib/mysql means MySQL data lives only in memory and is recreated fresh from the init scripts every time the container starts
+      - /var/lib/mysql
+    profiles:
+      - integration
+
+  # CMS Postgres Mock - contains test data for CMS pipeline (integration tests only)
+  cms-postgres:
+    build:
+      context: ./tests_integration/external_providers/cms_postgres
+      dockerfile: Dockerfile
+    container_name: cms-postgres-integration
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=cms_prod
+    ports:
+      - "5433:5432"
+    networks:
+      - spark-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d cms_prod -h localhost || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    profiles:
+      - integration
+
+  # Puzzel SQL Server Mock - contains test data for Puzzel pipeline (integration tests only)
+  puzzel-sqlserver:
+    build:
+      context: ./tests_integration/external_providers/puzzel_sqlserver
+      dockerfile: Dockerfile
+    container_name: puzzel-sqlserver-integration
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong!Passw0rd
+    ports:
+      - "1434:1433"
+    networks:
+      - spark-network
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P $$SA_PASSWORD -C -Q \"SELECT 1\" || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+    profiles:
+      - integration
+
+  # Entra ID / Microsoft Graph Mock API - Extended user properties for integration tests
+  entra-user-restapi:
+    build:
+      context: ./tests_integration/external_providers/entra_user_restapi
+      dockerfile: Dockerfile
+    container_name: entra-user-restapi-integration
+    ports:
+      - "8086:8000"
+    networks:
+      - spark-network
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider --quiet http://localhost:8000/v1.0/users || exit 1"]
+      interval: 1s
+      timeout: 1s
+      retries: 5
+      start_period: 2s
+    profiles:
+      - integration
+
+  # Verint REST API mock for integration tests
+  verint-restapi:
+    build:
+      context: ./tests_integration/external_providers/verint_restapi
+      dockerfile: Dockerfile
+    container_name: verint-restapi-integration
+    ports:
+      - "8087:8000"
+    networks:
+      - spark-network
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider --quiet http://localhost:8000/data || exit 1"]
+      interval: 1s
+      timeout: 1s
+      retries: 5
+      start_period: 2s
+    profiles:
+      - integration
+
+  # Azure Blob Storage emulation (tagdataengineering) with MinIO
+  tagdataengineering-blobstorage:
+    build:
+      context: ./tests_integration/external_providers/tagdataengineering
+      dockerfile: Dockerfile
+    pull_policy: build
+    container_name: tagdataengineering-blobstorage-integration
+    ports:
+      - "9010:9000"
+      - "9011:9001"
+    networks:
+      - spark-network
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /tmp/setup_complete || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+    profiles:
+      - integration
+
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    pull_policy: build
+    environment:
+      - MINIO_ENDPOINT=minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=test-lakehouse
+    depends_on:
+      minio:
+        condition: service_started
+    networks:
+      - spark-network
+    command: ["make", "test-run"]
+    profiles:
+      - test
+
+  # Integration test runner - runs end-to-end tests with mock services
+  integration-test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    pull_policy: build
+    container_name: test-runner-integration
+    environment:
+      # MinIO configuration
+      - MINIO_ENDPOINT=minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=integration-lakehouse
+      # CMS MySQL configuration
+      - CMS_MYSQL_HOST=cms-mysql
+      - CMS_MYSQL_PORT=3306
+      - CMS_MYSQL_USER=root
+      - CMS_MYSQL_PASSWORD=root
+      - CMS_MYSQL_DATABASE=cms_prod
+      # POPLA MySQL configuration
+      - POPLA_MYSQL_HOST=popla-mysql
+      - POPLA_MYSQL_PORT=3306
+      - POPLA_MYSQL_USER=root
+      - POPLA_MYSQL_PASSWORD=root
+      - POPLA_MYSQL_DATABASE=popla_prod
+      # ORN MySQL configuration
+      - ORN_IC_PORTAL_MYSQL_HOST=orn-ic-portal-mysql
+      - ORN_IC_PORTAL_MYSQL_PORT=3306
+      - ORN_IC_PORTAL_MYSQL_USER=root
+      - ORN_IC_PORTAL_MYSQL_PASSWORD=root
+      - ORN_IC_PORTAL_MYSQL_DATABASE=ic_portal
+      # Verint REST API configuration
+      - VERINT_BASE_URL=http://verint-restapi:8000/api
+      # Azure Blob Storage (tagdataengineering) configuration
+      - TAGDATAENGINEERING_BLOB_ENDPOINT=tagdataengineering-blobstorage:9000
+      - TAGDATAENGINEERING_BLOB_ACCESS_KEY=minioadmin
+      - TAGDATAENGINEERING_BLOB_SECRET_KEY=minioadmin
+      - TAGDATAENGINEERING_BLOB_CONTAINER=ingest-data
+      # Entra ID / Microsoft Graph Mock API configuration
+      - ENTRA_GRAPH_BASE_URL=http://entra-user-restapi:8000/v1.0
+      # CMS Postgres configuration
+      - CMS_POSTGRES_HOST=cms-postgres
+      - CMS_POSTGRES_PORT=5432
+      - CMS_POSTGRES_USER=postgres
+      - CMS_POSTGRES_PASSWORD=postgres
+      - CMS_POSTGRES_DATABASE=cms_prod
+      # Puzzel SQL Server configuration
+      - PUZZEL_SQLSERVER_HOST=puzzel-sqlserver
+      - PUZZEL_SQLSERVER_PORT=1433
+      - PUZZEL_SQLSERVER_USER=sa
+      - PUZZEL_SQLSERVER_PASSWORD=YourStrong!Passw0rd
+      - PUZZEL_SQLSERVER_DATABASE=ConnectCallData_26295
+    volumes:
+      # Mount results_actual directory so users can inspect actual CSVs when tests fail
+      - ./tests_integration/results_actual:/app/tests_integration/results_actual
+    networks:
+      - spark-network
+    depends_on:
+      cms-mysql:
+        condition: service_healthy
+      popla-mysql:
+        condition: service_healthy
+      orn-ic-portal-mysql:
+        condition: service_healthy
+      verint-restapi:
+        condition: service_healthy
+      tagdataengineering-blobstorage:
+        condition: service_healthy
+      entra-user-restapi:
+        condition: service_healthy
+      minio:
+        condition: service_started
+      cms-postgres:
+        condition: service_healthy
+      puzzel-sqlserver:
+        condition: service_healthy
+    command: ["make", "test-integration-run"]
+    profiles:
+      - integration
+
+networks:
+  spark-network:
+    driver: bridge
+
+volumes:
+  minio_data:

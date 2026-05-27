@@ -1,0 +1,4 @@
+service_num,queue_key,descript
+1234567890,General_Inquiries,General Enquiries
+1234567890,Retention_Queue,Retention Queue
+9876543210,Callback_Queue,Callback Queue

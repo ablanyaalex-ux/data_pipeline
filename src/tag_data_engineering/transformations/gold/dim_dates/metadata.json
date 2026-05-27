@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_dates",
+  "merge_key": "date_id",
+  "dependencies": [
+    "silver.gov_uk_bank_holidays"
+  ]
+}

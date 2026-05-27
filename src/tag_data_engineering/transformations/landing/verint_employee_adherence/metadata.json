@@ -1,0 +1,14 @@
+{
+  "entity": "verint_employee_adherence",
+  "pipeline_group": "verint",
+  "extractor": "verint_adherence",
+  "extraction_mode": "incremental",
+  "output_format": "jsonl",
+  "max_file_size_mb": 50,
+  "dependencies": [
+    "silver.entra_users"
+  ],
+  "extractor_config": {
+    "base_url": "https://wfo.a25.verintcloudservices.com/wfo/fis-api/v1"
+  }
+}

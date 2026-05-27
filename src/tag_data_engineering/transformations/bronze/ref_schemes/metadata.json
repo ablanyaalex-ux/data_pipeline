@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "other",
+  "table": "ref_schemes",
+  "entity": "ref_schemes",
+  "merge_key": "sector_customer_type_id",
+  "source_format": "jsonl"
+}

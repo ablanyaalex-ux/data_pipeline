@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "other",
+  "table": "finance_case_fees",
+  "merge_key": ["sector", "event_code", "effective_from_date"],
+  "dependencies": [
+    "bronze.finance_case_fees"
+  ]
+}

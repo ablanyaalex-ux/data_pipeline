@@ -1,0 +1,10 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "fact_monthly_finance_estimates",
+  "merge_key": "monthly_finance_estimate_id",
+  "dependencies": [
+    "silver.finance_monthly_budgets",
+    "silver.finance_monthly_forecasts"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_roles",
+  "merge_key": "role_id",
+  "dependencies": [
+    "silver.cms_roles"
+  ]
+}

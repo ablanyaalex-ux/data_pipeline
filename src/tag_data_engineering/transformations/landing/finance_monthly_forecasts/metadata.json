@@ -1,0 +1,14 @@
+{
+  "entity": "finance_monthly_forecasts",
+  "pipeline_group": "other",
+  "extraction_mode": "incremental",
+  "max_file_size_mb": 100,
+  "output_format": "jsonl",
+  "extractor": "blob",
+  "extractor_config": {
+    "source_container": "ingest-data",
+    "source_folder": "finance_monthly_forecasts",
+    "blob_account_url_keyvault": "data-ingest-storage-credentials",
+    "file_encoding": "cp1252"
+  }
+}

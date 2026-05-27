@@ -1,0 +1,6 @@
+created_at,decision_id,description,id,remedy,updated_at,value
+2024-01-20T10:10:00,1,Redacted remedy description,1,credit,2024-01-20T10:10:00,50.0
+2024-01-20T10:11:00,1,Redacted remedy description,2,apology,2024-01-20T10:11:00,
+2024-01-22T14:10:00,2,Redacted remedy description,3,refund,2024-01-22T14:10:00,150.0
+2024-01-25T09:10:00,3,Redacted remedy description,4,service_action,2024-01-25T09:10:00,
+2024-02-01T15:40:00,4,Redacted remedy description,5,credit,2024-02-01T15:40:00,25.0

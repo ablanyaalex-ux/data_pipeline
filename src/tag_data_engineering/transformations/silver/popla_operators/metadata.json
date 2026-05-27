@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "other",
+  "table": "popla_operators",
+  "merge_key": "operator_code",
+  "dependencies": [
+    "bronze.popla_operators"
+  ]
+}

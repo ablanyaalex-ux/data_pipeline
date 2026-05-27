@@ -1,0 +1,6 @@
+id,text,published,base_type,base_id,author_id,created_at,updated_at,proposed,author_type,disputed,parent_id,comment_type,accepted
+1,Comment text redacted,True,Complaint,1001,10,2024-02-01 15:00:00,2024-02-01 15:00:00,False,User,False,,internal_note,True
+2,Comment text redacted,True,Complaint,1002,11,2024-01-25 16:10:00,2024-01-25 16:10:00,False,User,False,,internal_note,True
+3,Comment text redacted,False,Complaint,1003,12,2024-02-01 11:00:00,2024-02-01 11:00:00,True,User,False,,draft,
+4,Comment text redacted,True,Decision,1,10,2024-01-20 10:20:00,2024-01-20 10:20:00,False,User,False,,decision_note,True
+5,Comment text redacted,True,Complaint,1004,1,2024-02-05 17:10:00,2024-02-05 17:10:00,False,User,True,,internal_note,False

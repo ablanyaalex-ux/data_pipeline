@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "cms",
+  "table": "cms_companies",
+  "entity": "cms_companies",
+  "merge_key": "id",
+  "source_format": "jsonl"
+}

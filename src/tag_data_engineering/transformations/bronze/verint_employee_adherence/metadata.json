@@ -1,0 +1,15 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "verint",
+  "table": "verint_employee_adherence",
+  "entity": "verint_employee_adherence",
+  "merge_key": [
+    "attributes_employeeIdentifier",
+    "attributes_adherenceStartDate",
+    "attributes_adherenceEndDate"
+  ],
+  "source_format": "jsonl",
+  "explode_fields": [
+    "attributes"
+  ]
+}

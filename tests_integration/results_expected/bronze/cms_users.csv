@@ -1,0 +1,7 @@
+activated_at,company_id,created_at,description,disabled,disabled_get_next,disabled_get_next_appeals,email,email_verified,first_name,id,last_logged_at,last_name,managing_agent,name,password_hash,proxy,role_id,telephone_number,title,updated_at
+2023-01-01T10:00:00,,2023-01-01T10:00:00,,0,0,1,john.smith@email.com,1,John,1,2024-01-15T09:00:00,Smith,0,consumer1,xxx,0,1,07700900001,Mr,2023-01-01T10:00:00
+2023-01-05T14:00:00,1.0,2023-01-05T14:00:00,,0,0,1,jane.doe@energycorp.com,1,Jane,2,2024-06-01T16:00:00,Doe,0,company_user1,xxx,0,2,,Ms,2023-06-15T11:00:00
+2022-06-01T09:00:00,,2022-06-01T09:00:00,Senior case handler,0,0,0,sarah.johnson@ombudsman.org,1,Sarah,10,2024-11-28T08:30:00,Johnson,0,os_staff1,xxx,1,3,02071234567,Mrs,2024-01-10T10:00:00
+2022-09-15T11:00:00,,2022-09-15T11:00:00,Case handler,0,0,0,michael.brown@ombudsman.org,1,Michael,11,2024-11-27T17:00:00,Brown,0,os_staff2,xxx,1,4,,Mr,2024-02-20T14:00:00
+2021-03-01T08:00:00,,2021-03-01T08:00:00,Appeals specialist,0,0,0,emily.wilson@ombudsman.org,1,Emily,12,2024-11-28T09:15:00,Wilson,0,os_staff3,xxx,1,5,02071234568,Ms,2024-03-01T09:00:00
+,,2020-01-01T10:00:00,,1,1,1,old.user@email.com,0,Old,100,,User,0,disabled_user,xxx,0,1,,,2022-12-31T23:59:59

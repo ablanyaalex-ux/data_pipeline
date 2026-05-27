@@ -1,0 +1,4 @@
+case_status,case_volume,case_volume_gbp,forecast_type,label,version,wc_date,year
+Fcast_AddChecks,,550,Forecast,Communications,2026 Forecast (Weekly),29/12/2025,2026
+Fcast_AddChecks,90,-250,Forecast,Communications,2026 Forecast (Weekly),05/01/2026,2026
+Fcast_AddChecks,900,,Forecast,Communications,2026 Forecast (Weekly),12/01/2026,2026

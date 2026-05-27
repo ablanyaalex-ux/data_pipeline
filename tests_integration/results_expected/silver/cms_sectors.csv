@@ -1,0 +1,7 @@
+id,name,symbol,is_active
+1,Energy,energy,True
+2,Telecoms,telecoms,True
+3,Financial Services,financial_services,True
+4,Water,water,True
+5,Retail,retail,False
+6,Transport,transport,True

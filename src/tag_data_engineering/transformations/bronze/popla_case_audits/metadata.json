@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "other",
+  "table": "popla_case_audits",
+  "entity": "popla_case_audits",
+  "merge_key": "id",
+  "source_format": "jsonl"
+}

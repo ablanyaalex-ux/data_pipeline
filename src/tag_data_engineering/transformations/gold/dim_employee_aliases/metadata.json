@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_employee_aliases",
+  "merge_key": "employee_alias_id",
+  "dependencies": [
+    "silver.ref_employee_aliases"
+  ]
+}

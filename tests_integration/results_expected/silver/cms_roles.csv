@@ -1,0 +1,9 @@
+id,name,symbol,description,role_type
+1,Administrator,admin,System administrator with full access,system
+2,Case Handler,case_handler,Handles complaint cases,operational
+3,Senior Case Handler,senior_case_handler,Senior staff for complex cases,operational
+4,Team Leader,team_leader,Manages a team of case handlers,management
+5,Ombudsman,ombudsman,Final decision maker,decision
+6,Consumer,consumer,Customer making a complaint,external
+7,Company Representative,company_rep,Represents the company in complaints,external
+8,Quality Assurance,qa,Reviews case quality,operational

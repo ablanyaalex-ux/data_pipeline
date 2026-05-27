@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_companies",
+  "merge_key": "company_id",
+  "dependencies": [
+    "silver.cms_companies"
+  ]
+}

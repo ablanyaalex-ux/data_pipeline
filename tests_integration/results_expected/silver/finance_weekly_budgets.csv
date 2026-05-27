@@ -1,0 +1,4 @@
+budget_type,budget_version,budget_year,budget_week_commencing,budget_sector,budget_case_status,budget_case_volume,budget_case_volume_gbp,source_file_name,source_file_date
+Budget,2026 Budget (Weekly),2026,2025-12-29,Communications,Fcast_AddChecks,482.166993,0.0,finance_weekly_budgets_20260101.csv,2026-01-01
+Budget,2026 Budget (Weekly),2026,2026-01-05,Communications,Fcast_AddChecks,476.833007,0.0,finance_weekly_budgets_20260101.csv,2026-01-01
+Budget,2026 Budget (Weekly),2026,2026-01-12,Energy,Fcast_AddChecks,124.5,0.0,finance_weekly_budgets_20260101.csv,2026-01-01

@@ -1,0 +1,6 @@
+Employee Id,Firstname,Hierarchy Level 2,Hierarchy Level 4,Job Title,Last Contractual Day,Line Manager,Office,Place of Work,Sector,Skip Line Manager,Surname,Weekly Hours,hierarchylevel3,hierarchylevel5,hierarchylevel6,source_file_name,windowsusername
+123,PersonA,Operations,Investigations,Senior Case Handler,,(000543) PersonD UserFour Five,OfficeA,Hybrid,SectorAlpha,(000742) PersonE UserFive,UserOne,37.5,CustomerServices,SeniorStaff,,employees_hierarchy_20260212.csv,usera
+123,PersonA,Operations,Investigations,Lead Case Handler,,(000543) PersonD UserFour Five,OfficeA,Hybrid,SectorAlpha,(000742) PersonE UserFive,UserOne,37.5,CustomerServices,SeniorStaff,,employees_hierarchy_20260301.csv,usera
+456,PersonB,Operations,,Case Handler,,(000123) PersonA UserOne,OfficeB,Office,SectorBeta,(000832) PersonF UserSix,UserTwo,30.0,CustomerServices,,,employees_hierarchy_20260212.csv,userb
+789,PersonC,Operations,Management,Team Manager,2024-12-31 00:00:00,(000799) PersonG UserSeven,,Remote,SectorAlpha,,UserThree,40.0,CustomerServices,,,employees_hierarchy_20260212.csv,userc
+999,PersonH,Operations,Escalations,Case Analyst,,(000543) PersonD UserFour Five,OfficeC,Hybrid,SectorGamma,,UserEight,35.0,CustomerServices,SpecialProjects,,employees_hierarchy_20260301.csv,userh

@@ -1,0 +1,72 @@
+FROM python:3.12-slim
+
+# Install SQL Server ODBC + tools (only on AMD64 - not available for ARM64)
+# On ARM64 (Apple Silicon), this step is skipped but tests still run
+RUN ARCH=$(dpkg --print-architecture) && \
+    if [ "$ARCH" = "amd64" ]; then \
+        apt-get update && \
+        apt-get install -y curl gnupg ca-certificates apt-transport-https && \
+        curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg && \
+        echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/debian/12/prod bookworm main" > /etc/apt/sources.list.d/mssql-release.list && \
+        apt-get update && \
+        ACCEPT_EULA=Y apt-get install -y msodbcsql18 mssql-tools18 unixodbc-dev && \
+        ln -s /opt/mssql-tools18 /opt/mssql-tools && \
+        rm -rf /var/lib/apt/lists/*; \
+    else \
+        echo "ARM64 detected - installing FreeTDS as SQL Server driver"; \
+        apt-get update && \
+        apt-get install -y unixodbc-dev freetds-dev freetds-bin tdsodbc && \
+        rm -rf /var/lib/apt/lists/* && \
+        echo "[FreeTDS]" > /etc/odbcinst.ini && \
+        echo "Description = FreeTDS Driver" >> /etc/odbcinst.ini && \
+        echo "Driver = /usr/lib/aarch64-linux-gnu/odbc/libtdsodbc.so" >> /etc/odbcinst.ini && \
+        echo "Setup = /usr/lib/aarch64-linux-gnu/odbc/libtdsS.so" >> /etc/odbcinst.ini && \
+        echo "UsageCount = 1" >> /etc/odbcinst.ini && \
+        echo "" >> /etc/odbcinst.ini && \
+        echo "[ODBC Driver 18 for SQL Server]" >> /etc/odbcinst.ini && \
+        echo "Description = FreeTDS Driver (aliased as ODBC Driver 18)" >> /etc/odbcinst.ini && \
+        echo "Driver = /usr/lib/aarch64-linux-gnu/odbc/libtdsodbc.so" >> /etc/odbcinst.ini && \
+        echo "Setup = /usr/lib/aarch64-linux-gnu/odbc/libtdsS.so" >> /etc/odbcinst.ini && \
+        echo "UsageCount = 1" >> /etc/odbcinst.ini; \
+    fi
+ENV PATH="/opt/mssql-tools18/bin:${PATH}"
+
+# Install build tools needed for make/compilation
+RUN apt-get update \
+ && apt-get install -y make build-essential \
+ && rm -rf /var/lib/apt/lists/*
+
+
+# Install Java (required for PySpark) and make
+RUN apt-get update && \
+    apt-get install -y default-jdk-headless make && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set Java home
+ENV JAVA_HOME=/usr/lib/jvm/default-java
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
+
+WORKDIR /app
+
+# Copy dependency files first (these change infrequently, so cache is preserved)
+COPY pyproject.toml uv.lock Makefile ./
+
+# Create minimal structure for editable install (README + package stub)
+RUN touch README.md && \
+    mkdir -p src/tag_data_engineering && \
+    touch src/tag_data_engineering/__init__.py
+
+# Install dependencies (this layer is cached unless pyproject.toml/uv.lock change)
+RUN make install
+
+# Now copy the actual source code and tests
+COPY src ./src
+COPY tests ./tests
+COPY tests_integration ./tests_integration
+
+# Reinstall package with actual source (fast since deps are cached)
+RUN make install
+
+CMD ["make", "test-run"]

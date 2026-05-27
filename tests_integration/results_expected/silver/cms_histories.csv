@@ -1,0 +1,9 @@
+id,event,details,complaint_id,user_id,created_at
+1,Status Changed [investigate],new to investigate,1001,10,2023-01-10 10:00:00
+2,Status Changed [decision_issued],investigate to decision_issued,1001,10,2023-01-15 10:00:00
+3,Status Changed [pending_appeal],decision_issued to Pending Appeal,1001,1,2023-02-01 10:00:00
+4,Status Changed [under_appeal],Pending Appeal to under_appeal,1001,10,2023-02-05 09:00:00
+5,Publish Decision,Decision published,1001,10,2023-01-15 10:30:00
+6,Status Changed [investigate],new to investigate,1002,11,2023-02-15 14:00:00
+7,Status Changed [decision_issued],investigate to decision_issued,1002,11,2023-02-20 14:30:00
+8,DRE one assigned,Case assigned to DRE,1001,12,2023-02-10 08:00:00

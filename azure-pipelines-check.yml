@@ -1,0 +1,21 @@
+trigger: none
+pr: none
+pool:
+  vmImage: "ubuntu-latest"
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: "3.12"
+    displayName: "Set up Python"
+  - script: |
+      make install
+    displayName: "Install dependencies"
+  - script: |
+      make lint-check
+    displayName: "Lint check"
+  - script: |
+      make type-check
+    displayName: "Type check"
+  - script: |
+      make test
+    displayName: "Run tests"

@@ -1,0 +1,10 @@
+{
+  "/login/*": "/login/$1",
+  "/v1.0/users\\?*": "/external_users",
+  "/v1.0/users": "/external_users",
+  "/v1.0/applications*": "/applications",
+  "/v1.0/applications/*/extensionProperties": "/extensionProperties_$1",
+  "/v1.0/schemaExtensions*": "/schemaExtensions",
+  "/v1.0/$metadata": "/metadata",
+  "/v1.0/*": "/$1"
+}

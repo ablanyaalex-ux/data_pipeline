@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_schemes",
+  "merge_key": "sector_customer_type_id",
+  "dependencies": [
+    "silver.ref_schemes"
+  ]
+}

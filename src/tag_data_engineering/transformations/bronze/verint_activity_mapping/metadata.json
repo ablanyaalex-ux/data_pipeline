@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "verint",
+  "table": "verint_activity_mapping",
+  "entity": "verint_activity_mapping",
+  "merge_key": ["ActivityMappingID", "source_file_name"],
+  "source_format": "jsonl"
+}

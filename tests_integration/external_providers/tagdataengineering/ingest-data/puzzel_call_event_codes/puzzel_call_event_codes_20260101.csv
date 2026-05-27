@@ -1,0 +1,5 @@
+event_type,result_code,event_description,is_dropped,is_queue_answered,is_timed_out,is_volume,is_call_answered
+q,h,Queue - Dropped,1,0,0,1,0
+q,k,Queue - Answered,0,1,0,1,0
+q,t,Queue - Timed Out,0,0,1,0,0
+c,k,Call - Answered,0,0,0,0,1

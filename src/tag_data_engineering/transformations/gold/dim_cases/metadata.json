@@ -1,0 +1,12 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_cases",
+  "merge_key": "case_id",
+  "dependencies": [
+    "silver.cms_complaints",
+    "silver.cms_sectors",
+    "bronze.cms_complaints",
+    "gold.dim_schemes"
+  ]
+}

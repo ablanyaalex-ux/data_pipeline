@@ -1,0 +1,4 @@
+forecast_type,forecast_version,forecast_year,forecast_month,forecast_sector,forecast_case_status,forecast_case_volume,forecast_case_volume_gbp,source_file_name,source_file_date
+Forecast,2026 Forecast(monthly),2026,2026-01-01,Communications,Fcast_AddChecks,1985.100000,99.100000,finance_monthly_forecasts_20260101.csv,2026-01-01
+Forecast,2026 Forecast(monthly),2026,2026-02-01,Communications,Fcast_AddChecks,1670.100000,88.100000,finance_monthly_forecasts_20260101.csv,2026-01-01
+Forecast,2026 Forecast(monthly),2026,2026-03-01,Communications,Fcast_AddChecks,1234.100000,-666.100000,finance_monthly_forecasts_20260101.csv,2026-01-01

@@ -1,0 +1,13 @@
+{
+  "entity": "verint_activity_mapping",
+  "pipeline_group": "verint",
+  "extractor": "blob",
+  "extraction_mode": "incremental",
+  "output_format": "jsonl",
+  "max_file_size_mb": 50,
+  "extractor_config": {
+    "source_container": "ingest-data",
+    "source_folder": "verint_activity_mapping",
+    "blob_account_url_keyvault": "data-ingest-storage-credentials"
+  }
+}

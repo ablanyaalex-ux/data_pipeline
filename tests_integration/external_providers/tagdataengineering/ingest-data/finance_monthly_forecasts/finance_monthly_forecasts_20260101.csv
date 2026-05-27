@@ -1,0 +1,4 @@
+case_status,case_volume,case_volume_gbp,forecast_type,label,month,version,year
+Fcast_AddChecks,1985.1,99.1,Forecast,Communications,01/01/2026,2026 Forecast(monthly),2026
+Fcast_AddChecks,1670.1,88.1,Forecast,Communications,01/02/2026,2026 Forecast(monthly),2026
+Fcast_AddChecks,1234.1,-666.1,Forecast,Communications,01/03/2026,2026 Forecast(monthly),2026

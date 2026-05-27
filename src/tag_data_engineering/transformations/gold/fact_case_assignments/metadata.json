@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "fact_case_assignments",
+  "merge_key": ["case_id", "case_assignment_sequence"],
+  "dependencies": [
+    "silver.cms_histories"
+  ]
+}

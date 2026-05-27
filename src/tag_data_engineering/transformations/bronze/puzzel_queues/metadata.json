@@ -1,0 +1,12 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "other",
+  "table": "puzzel_queues",
+  "entity": "puzzel_queues",
+  "merge_key": [
+    "service_num",
+    "queue_key",
+    "descript"
+  ],
+  "source_format": "jsonl"
+}

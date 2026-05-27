@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "orn_ic_portal",
+  "table": "dim_ai_documents",
+  "merge_key": "context_id",
+  "dependencies": [
+    "silver.orn_ic_portal_wp_mwai_chat_retrieval_context_docs"
+  ]
+}

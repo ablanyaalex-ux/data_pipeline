@@ -1,0 +1,7 @@
+weekly_finance_estimate_id,record_type,finance_type,finance_version,finance_year,period_date,sector,case_status,case_volume,case_volume_gbp,source_file_name,source_file_date
+4121ed9842b52903f31a5154cb19294a12360885e13d36604e8913bc172337ca,budget,Budget,2026 Budget (Weekly),2026,2025-12-29,Communications,Fcast_AddChecks,482.166993,0.0,finance_weekly_budgets_20260101.csv,2026-01-01
+9e0adfe6181402c6b9c64cf3922fd84d7ea7073a85c122849fdb4d3c15fa9828,budget,Budget,2026 Budget (Weekly),2026,2026-01-05,Communications,Fcast_AddChecks,476.833007,0.0,finance_weekly_budgets_20260101.csv,2026-01-01
+74cc4140a4c2ee7f24cc62f261077671105a8c7d8cebb5ebfe2f60e59a25f8c7,budget,Budget,2026 Budget (Weekly),2026,2026-01-12,Energy,Fcast_AddChecks,124.5,0.0,finance_weekly_budgets_20260101.csv,2026-01-01
+6b2d8a53c92396791fef843a067e20141e52a09f92bfbf597b0e6d0b0e85c100,forecast,Forecast,2026 Forecast (Weekly),2026,2025-12-29,Communications,Fcast_AddChecks,,550.0,finance_weekly_forecasts_20260101.csv,2026-01-01
+d29c05516e1c3057f02a54d84efdde82d08c61f05bfbeedf6bd5341afd8b023c,forecast,Forecast,2026 Forecast (Weekly),2026,2026-01-05,Communications,Fcast_AddChecks,90.0,-250.0,finance_weekly_forecasts_20260101.csv,2026-01-01
+a2177e69df5d2fd974288e08ca08f37842b6cb793e18dec3e097abd1ebbc7402,forecast,Forecast,2026 Forecast (Weekly),2026,2026-01-12,Communications,Fcast_AddChecks,900.0,,finance_weekly_forecasts_20260101.csv,2026-01-01

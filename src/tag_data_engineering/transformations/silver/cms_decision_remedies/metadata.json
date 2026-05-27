@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "cms",
+  "table": "cms_decision_remedies",
+  "merge_key": "id",
+  "dependencies": [
+    "bronze.cms_decision_remedies"
+  ]
+}

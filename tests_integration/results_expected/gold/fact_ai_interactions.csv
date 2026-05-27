@@ -1,0 +1,4 @@
+ai_system,chat_id,turn_index,role,content,is_assistant_turn,is_user_turn,has_turn_extra,has_retrieval
+orn_ic_portal_mwai,chat_ABC123,0,user,Hello,0,1,0,0
+orn_ic_portal_mwai,chat_DEF456,0,assistant,How can I help?,1,0,0,0
+orn_ic_portal_mwai,chat_GHI789,0,assistant,Here is a summary of Principle 1.4.,1,0,1,1

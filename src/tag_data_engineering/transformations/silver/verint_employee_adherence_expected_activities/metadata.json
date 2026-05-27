@@ -1,0 +1,23 @@
+{
+  "schema": "silver",
+  "pipeline_group": "verint",
+  "table": "verint_employee_adherence_expected_activities",
+  "merge_key": [
+    "employee_identifier",
+    "adherence_start_date",
+    "activity_name",
+    "activity_start_time",
+    "adherence_end_date",
+    "activity_end_time"
+  ],
+  "dependencies": [
+    "bronze.verint_employee_adherence"
+  ],
+  "overwrite_matching_existing_source_keys": true,
+  "source_merge_key": [
+    "employee_identifier",
+    "adherence_start_date",
+    "adherence_end_date"
+  ]
+}
+

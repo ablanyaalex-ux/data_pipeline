@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "test",
+  "table": "test_entity",
+  "entity": "test_entity",
+  "merge_key": "id",
+  "source_format": "jsonl"
+}

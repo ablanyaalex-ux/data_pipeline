@@ -1,0 +1,9 @@
+additional_info,complaint_id,created_at,details,event,history_type,id,updated_at,user_id
+,1001,2023-01-10T10:00:00,new to investigate,Status Changed [investigate],status_change,1,2023-01-10T10:00:00,10
+,1001,2023-01-15T10:00:00,investigate to decision_issued,Status Changed [decision_issued],status_change,2,2023-01-15T10:00:00,10
+,1001,2023-02-01T10:00:00,decision_issued to Pending Appeal,Status Changed [pending_appeal],status_change,3,2023-02-01T10:00:00,1
+,1001,2023-02-05T09:00:00,Pending Appeal to under_appeal,Status Changed [under_appeal],status_change,4,2023-02-05T09:00:00,10
+,1001,2023-01-15T10:30:00,Decision published,Publish Decision,action,5,2023-01-15T10:30:00,10
+,1002,2023-02-15T14:00:00,new to investigate,Status Changed [investigate],status_change,6,2023-02-15T14:00:00,11
+,1002,2023-02-20T14:30:00,investigate to decision_issued,Status Changed [decision_issued],status_change,7,2023-02-20T14:30:00,11
+,1001,2023-02-10T08:00:00,Case assigned to DRE,DRE one assigned,assignment,8,2023-02-10T08:00:00,12

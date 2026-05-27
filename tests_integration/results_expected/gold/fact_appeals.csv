@@ -1,0 +1,5 @@
+appeal_id,case_id,user_id,created_date,created_date_id,updated_date,updated_date_id,is_rejected,text,rejection_reason,reason,why_evidence_was_unavailable,why_evidence_makes_a_difference,account_of_events,factual_error,why_factual_error_makes_a_difference
+1,1001,1,2023-02-01 10:00:00,20230201,2023-02-01 10:00:00,20230201,0,I have new evidence to support my case,,new-evidence,Was not available at time of original complaint,This changes the outcome,,,
+2,1001,2,2023-02-02 14:00:00,20230202,2023-02-02 14:00:00,20230202,0,Company disagrees with decision,,factual-errors,,,,The dates in the decision are incorrect,Correct dates show we responded in time
+3,1002,10,2023-03-15 09:30:00,20230315,2023-03-15 09:30:00,20230315,0,OS staff appeal on behalf of consumer,,new-evidence,,,Consumer provided additional documentation,,
+4,1003,1,2023-04-10 11:00:00,20230410,2023-04-10 11:00:00,20230410,1,Appeal rejected - not valid,Appeal does not meet criteria,not-listed,,,,,

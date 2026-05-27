@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "cms",
+  "table": "cms_comments",
+  "merge_key": "id",
+  "dependencies": [
+    "bronze.cms_comments"
+  ]
+}

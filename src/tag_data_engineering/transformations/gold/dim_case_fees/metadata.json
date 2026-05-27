@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_case_fees",
+  "merge_key": "case_fee_id",
+  "dependencies": [
+    "silver.finance_case_fees"
+  ]
+}

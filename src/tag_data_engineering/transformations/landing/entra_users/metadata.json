@@ -1,0 +1,12 @@
+{
+  "entity": "entra_users",
+  "pipeline_group": "other",
+  "extraction_mode": "full_refresh",
+  "max_file_size_mb": 100,
+  "output_format": "jsonl",
+  "extractor": "entra_users",
+  "extractor_config": {
+    "base_url": "https://graph.microsoft.com/v1.0",
+    "login_base_url": "https://login.microsoftonline.com"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "silver",
+  "pipeline_group": "orn_ic_portal",
+  "table": "orn_ic_portal_wp_mwai_chat_assistant_turn_meta",
+  "merge_key": ["chat_id", "turn_index"],
+  "dependencies": [
+    "silver.orn_ic_portal_wp_mwai_chats",
+    "silver.orn_ic_portal_wp_mwai_chat_turns"
+  ]
+}

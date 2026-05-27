@@ -1,0 +1,7 @@
+monthly_finance_estimate_id,record_type,finance_type,finance_version,finance_year,period_date,sector,case_status,case_volume,case_volume_gbp,source_file_name,source_file_date
+93a2330bef11bcfc426423af86a8fb07679e1ba4c67230aba9098515c5316ec4,budget,Budget,2026 Budget (monthly),2026,2026-01-01,Communications,Fcast_AddChecks,1985.1,99.1,finance_monthly_budgets_20260101.csv,2026-01-01
+348345ee3c9fd5963012b966b54527d745dd3809f0dd22c947ca8313a6009351,budget,Budget,2026 Budget (monthly),2026,2026-02-01,Communications,Fcast_AddChecks,1670.1,88.1,finance_monthly_budgets_20260101.csv,2026-01-01
+ca00e62e1bef38011d3091cf2b814a6a5816cf6a8dc3cb61dbe075b34416a1b2,budget,Budget,2026 Budget (monthly),2026,2026-03-01,Communications,Fcast_AddChecks,1234.1,-666.1,finance_monthly_budgets_20260101.csv,2026-01-01
+fc2f97e2f52e101b2a2587ed4e494ee4e00b899ded290252de48622f0cb22388,forecast,Forecast,2026 Forecast(monthly),2026,2026-01-01,Communications,Fcast_AddChecks,1985.1,99.1,finance_monthly_forecasts_20260101.csv,2026-01-01
+9eefa37fb4117cdf90b0e56e1cdbcf32c9b9875e2dd0545fbf49a8511a14a99c,forecast,Forecast,2026 Forecast(monthly),2026,2026-02-01,Communications,Fcast_AddChecks,1670.1,88.1,finance_monthly_forecasts_20260101.csv,2026-01-01
+c9f79037f21e1198c550a8eb7e7d9ff680c22234f49fa8aee56a8e16929a8f4a,forecast,Forecast,2026 Forecast(monthly),2026,2026-03-01,Communications,Fcast_AddChecks,1234.1,-666.1,finance_monthly_forecasts_20260101.csv,2026-01-01

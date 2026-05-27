@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_users",
+  "merge_key": "user_id",
+  "dependencies": [
+    "silver.cms_users"
+  ]
+}

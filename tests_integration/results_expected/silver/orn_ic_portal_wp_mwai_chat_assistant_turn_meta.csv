@@ -1,0 +1,3 @@
+chat_id,turn_index,session_id,model_name,temperature,previous_response_id,previous_response_date,assistant_extra_json
+chat_DEF456,0,,,,,,
+chat_GHI789,0,69a44dcb12b51,gpt-4.1-nano,0.1,chatcmpl-DEc7XUe3vJ79aOfXwNRqR7fIfkcTO,2026-03-01 14:31:40,"{""embeddings"":[{""id"":""ef0a7ea0532aba152411d2c267cba8d376d8e6f8534dd6d1d100c6c2ad54f0df"",""type"":""postId"",""title"":""Principle 1.4: Operate and communicate with transparency and ensure accountability"",""ref"":""18056"",""score"":0.264229774}]}"

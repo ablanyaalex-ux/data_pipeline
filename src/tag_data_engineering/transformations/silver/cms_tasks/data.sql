@@ -1,0 +1,30 @@
+-- Silver transformation for cms_tasks
+
+SELECT
+    CAST(id AS BIGINT)                         AS id,
+    CAST(title AS STRING)                      AS title,
+    CAST(description AS STRING)                AS description,
+    CAST(parent_guid AS STRING)                AS parent_guid,
+    CAST(assignee_guid AS STRING)              AS assignee_guid,
+    CAST(assigned_at AS TIMESTAMP)             AS assigned_at,
+    CAST(completed_at AS TIMESTAMP)            AS completed_at,
+    CAST(initial_message AS STRING)            AS initial_message,
+    CAST(created_at AS TIMESTAMP)              AS created_at,
+    CAST(updated_at AS TIMESTAMP)              AS updated_at,
+    CAST(complaint_reference AS STRING)        AS complaint_reference,
+    CAST(parent_type AS STRING)                AS parent_type,
+    CAST(status AS STRING)                     AS status,
+    CAST(guide_guid AS STRING)                 AS guide_guid,
+    CAST(expired_at AS TIMESTAMP)              AS expired_at,
+    CAST(milestones AS STRING)                 AS milestones,
+    CAST(current_milestone AS INT)             AS current_milestone,
+    CAST(complaint_guid AS STRING)             AS complaint_guid,
+    CAST(visible AS BOOLEAN)                   AS visible,
+    CAST(permitted_users_arr AS STRING)       AS permitted_users_arr,
+    CAST(permitted_roles_arr AS STRING)       AS permitted_roles_arr,
+    CAST(complaint_status AS STRING)            AS complaint_status,
+    CAST(scheduled_datetime AS TIMESTAMP)      AS scheduled_datetime,
+    CAST(due_date AS DATE)                     AS due_date,
+    CAST(counter AS INT)                       AS counter,
+    CAST(type_id AS BIGINT)                    AS type_id
+FROM bronze.cms_tasks

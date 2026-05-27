@@ -1,0 +1,4 @@
+ai_system,chat_id,bot_id,created_at,updated_at,session_id,model_name,temperature,previous_response_id,previous_response_date,has_retrieval
+orn_ic_portal_mwai,chat_ABC123,bot_01,2025-01-10 09:15:30,2025-01-10 09:15:30,,,,,,0
+orn_ic_portal_mwai,chat_DEF456,bot_01,2025-01-11 14:42:10,2025-01-11 14:45:22,,,,,,0
+orn_ic_portal_mwai,chat_GHI789,bot_01,2026-03-01 14:31:40,2026-03-01 14:31:40,69a44dcb12b51,gpt-4.1-nano,0.1,chatcmpl-DEc7XUe3vJ79aOfXwNRqR7fIfkcTO,2026-03-01 14:31:40,1

@@ -1,0 +1,4 @@
+chat_id,turn_index,role,content,turn_extra_json,has_turn_extra
+chat_ABC123,0,user,Hello,,0
+chat_DEF456,0,assistant,How can I help?,,0
+chat_GHI789,0,assistant,Here is a summary of Principle 1.4.,"{""embeddings"":[{""id"":""ef0a7ea0532aba152411d2c267cba8d376d8e6f8534dd6d1d100c6c2ad54f0df"",""type"":""postId"",""title"":""Principle 1.4: Operate and communicate with transparency and ensure accountability"",""ref"":""18056"",""score"":0.264229774}]}",1

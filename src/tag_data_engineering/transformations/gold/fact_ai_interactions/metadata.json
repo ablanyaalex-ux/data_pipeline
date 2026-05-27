@@ -1,0 +1,10 @@
+{
+  "schema": "gold",
+  "pipeline_group": "orn_ic_portal",
+  "table": "fact_ai_interactions",
+  "merge_key": ["chat_id", "turn_index"],
+  "dependencies": [
+    "silver.orn_ic_portal_wp_mwai_chat_turns",
+    "silver.orn_ic_portal_wp_mwai_chat_turn_retrieval_contexts"
+  ]
+}

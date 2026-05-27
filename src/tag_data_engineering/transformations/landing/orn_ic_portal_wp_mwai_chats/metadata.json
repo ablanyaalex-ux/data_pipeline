@@ -1,0 +1,14 @@
+{
+  "entity": "orn_ic_portal_wp_mwai_chats",
+  "pipeline_group": "orn_ic_portal",
+  "extraction_mode": "full_refresh",
+  "max_file_size_mb": 100,
+  "output_format": "jsonl",
+  "extractor": "mysql",
+  "extractor_config": {
+    "source_system": "orn_ic_portal",
+    "source_secret_key": "lumin-prod-aws-icportal-mysql-credentials",
+    "source_database": "ic_portal",
+    "source_table": "wp_mwai_chats"
+  }
+}

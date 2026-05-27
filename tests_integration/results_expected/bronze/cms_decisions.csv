@@ -1,0 +1,7 @@
+attachment_id,author_id,body,complaint_id,created_at,final,final_challenge_type,id,outcome,published,published_at,service_type_id,updated_at
+,10,Decision body for complaint 1001,1001,2023-01-15T10:00:00,0,,1,upheld,1,2023-01-15T10:00:00,1,2023-01-15T10:00:00
+100.0,11,Decision body for complaint 1002,1002,2023-02-20T14:30:00,0,,2,not upheld,1,2023-02-20T14:30:00,2,2023-02-20T14:30:00
+,12,Final decision for complaint 1001 after appeal,1001,2023-03-10T09:00:00,1,new-evidence,3,upheld,1,2023-03-10T09:00:00,1,2023-03-10T09:00:00
+,10,Draft decision - not published,1003,2023-04-01T11:00:00,0,,4,,0,,1,2023-04-01T11:00:00
+,10,Decision with XXX outcome (excluded),1004,2023-05-01T10:00:00,0,,5,XXX,1,2023-05-01T10:00:00,1,2023-05-01T10:00:00
+,11,Duplicate decision for complaint 1002 (earlier - should be inactive),1002,2023-02-19T10:00:00,0,,6,upheld,1,2023-02-19T10:00:00,2,2023-02-19T10:00:00

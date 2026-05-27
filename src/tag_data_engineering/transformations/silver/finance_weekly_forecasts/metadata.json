@@ -1,0 +1,10 @@
+{
+  "schema": "silver",
+  "pipeline_group": "other",
+  "table": "finance_weekly_forecasts",
+  "entity": "finance_weekly_forecasts",
+  "merge_key": ["forecast_year","forecast_week_commencing","forecast_sector","forecast_case_status","source_file_name"],
+   "dependencies": [
+    "bronze.finance_weekly_forecasts"
+  ]
+}

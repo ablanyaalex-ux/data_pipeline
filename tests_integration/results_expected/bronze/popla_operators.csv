@@ -1,0 +1,3 @@
+country,email,name,operator_code,phone,portal_account_status,primary_contact_id,url
+GB,contact@operator1.com,Operator One,OP1,+44 1234 567890,ACTIVE,1001,https://operator1.example.com
+GB,support@operator2.com,Operator Two,OP2,+44 9876 543210,SUSPENDED,1002,https://operator2.example.com

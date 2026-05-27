@@ -1,0 +1,7 @@
+histories_id,complaint_id,user_id,created_at,status_to,status_from,status_action
+1,1001,10,2023-01-10 10:00:00,investigate,new,investigate
+2,1001,10,2023-01-15 10:00:00,decision issued,investigate,decision issued
+3,1001,1,2023-02-01 10:00:00,pending appeal,decision issued,pending appeal
+4,1001,10,2023-02-05 09:00:00,under appeal,pending appeal,under appeal
+6,1002,11,2023-02-15 14:00:00,investigate,new,investigate
+7,1002,11,2023-02-20 14:30:00,decision issued,investigate,decision issued

@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "orn_ic_portal",
+  "table": "orn_ic_portal_wp_mwai_chats",
+  "merge_key": "chat_id",
+  "dependencies": [
+    "bronze.orn_ic_portal_wp_mwai_chats"
+  ]
+}

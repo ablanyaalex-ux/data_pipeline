@@ -1,0 +1,11 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "fact_case_status_transitions",
+  "merge_key": "case_status_transition_id",
+  "dependencies": [
+    "silver.cms_histories_case_status_transitions",
+    "gold.dim_dates",
+    "gold.dim_case_statuses"
+  ]
+}

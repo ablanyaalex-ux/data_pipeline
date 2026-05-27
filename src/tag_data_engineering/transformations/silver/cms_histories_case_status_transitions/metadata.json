@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "cms",
+  "table": "cms_histories_case_status_transitions",
+  "merge_key": "histories_id",
+  "dependencies": [
+    "bronze.cms_histories"
+  ]
+}

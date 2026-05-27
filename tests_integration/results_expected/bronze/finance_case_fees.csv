@@ -1,0 +1,22 @@
+cost_amount,currency,effective_from_date,effective_to_date,event_code,event_name,sector,source_file_name
+13.25,GBP,01/01/2024,,ACCEPT_CASE,Accept Case,Communications,finance_case_fees_20240101.csv
+-92.75,GBP,01/01/2024,,DISPUTE_ACCEPT,Dispute Accept,Communications,finance_case_fees_20240101.csv
+-2.75,GBP,01/01/2024,,FCR_ACCEPT,FCR Accept,Communications,finance_case_fees_20240101.csv
+66.25,GBP,01/01/2024,,INITIAL_DECISION,Initial Decision,Communications,finance_case_fees_20240101.csv
+106,GBP,01/01/2024,,INVESTIGATE,Investigate,Communications,finance_case_fees_20240101.csv
+79.5,GBP,01/01/2024,,PREP_CASE,Prepare Case,Communications,finance_case_fees_20240101.csv
+-92.75,GBP,01/01/2024,,PREP_MAN_CLOSE,Prep Manual Close,Communications,finance_case_fees_20240101.csv
+18.75,GBP,01/01/2024,,ACCEPT_CASE,Accept Case,Energy B2B,finance_case_fees_20240101.csv
+-131.25,GBP,01/01/2024,,DISPUTE_ACCEPT,Dispute Accept,Energy B2B,finance_case_fees_20240101.csv
+118.75,GBP,01/01/2024,,FCR_ACCEPT,FCR Accept,Energy B2B,finance_case_fees_20240101.csv
+93.75,GBP,01/01/2024,,INITIAL_DECISION,Initial Decision,Energy B2B,finance_case_fees_20240101.csv
+150,GBP,01/01/2024,,INVESTIGATE,Investigate,Energy B2B,finance_case_fees_20240101.csv
+112.5,GBP,01/01/2024,,PREP_CASE,Prepare Case,Energy B2B,finance_case_fees_20240101.csv
+-131.25,GBP,01/01/2024,,PREP_MAN_CLOSE,Prep Manual Close,Energy B2B,finance_case_fees_20240101.csv
+18.75,GBP,01/01/2024,,ACCEPT_CASE,Accept Case,Energy B2C,finance_case_fees_20240101.csv
+-131.25,GBP,01/01/2024,,DISPUTE_ACCEPT,Dispute Accept,Energy B2C,finance_case_fees_20240101.csv
+118.75,GBP,01/01/2024,,FCR_ACCEPT,FCR Accept,Energy B2C,finance_case_fees_20240101.csv
+93.75,GBP,01/01/2024,,INITIAL_DECISION,Initial Decision,Energy B2C,finance_case_fees_20240101.csv
+150,GBP,01/01/2024,,INVESTIGATE,Investigate,Energy B2C,finance_case_fees_20240101.csv
+112.5,GBP,01/01/2024,,PREP_CASE,Prepare Case,Energy B2C,finance_case_fees_20240101.csv
+-131.25,GBP,01/01/2024,,PREP_MAN_CLOSE,Prep Manual Close,Energy B2C,finance_case_fees_20240101.csv

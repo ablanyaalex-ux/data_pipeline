@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "other",
+  "table": "puzzel_agents",
+  "entity": "puzzel_agents",
+  "merge_key": "agent_id",
+  "source_format": "jsonl"
+}

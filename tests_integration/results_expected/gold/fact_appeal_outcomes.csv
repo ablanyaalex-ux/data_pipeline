@@ -1,0 +1,4 @@
+case_id,has_consumer_appeal,has_company_appeal,has_internal_appeal,has_consumer_or_internal_appeal,has_rejected_appeal_status,has_accepted_appeal_status,has_rejected_appeal_action,has_accepted_appeal_action,has_ongoing_appeal,has_appeal_assigned,has_unallocated_appeal
+1001,1,1,0,1,0,0,0,0,1,0,1
+1002,0,0,1,1,0,0,0,0,0,0,0
+1003,1,0,0,1,0,0,0,0,0,0,0

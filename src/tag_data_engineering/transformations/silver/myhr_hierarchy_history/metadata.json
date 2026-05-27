@@ -1,0 +1,13 @@
+{
+  "schema": "silver",
+  "pipeline_group": "other",
+  "table": "myhr_hierarchy_history",
+  "entity": "myhr_hierarchy_history",
+  "merge_key": [
+    "employee_id",
+    "source_file_name"
+  ],
+  "dependencies": [
+    "bronze.myhr_hierarchy_history"
+  ]
+}

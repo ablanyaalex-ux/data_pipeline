@@ -1,0 +1,13 @@
+{
+  "schema": "silver",
+  "pipeline_group": "other",
+  "table": "puzzel_queues",
+  "merge_key": [
+    "service_num",
+    "queue_key",
+    "descript"
+  ],
+  "dependencies": [
+    "bronze.puzzel_queues"
+  ]
+}

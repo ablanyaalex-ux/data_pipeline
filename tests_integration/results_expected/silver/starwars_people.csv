@@ -1,0 +1,26 @@
+id,name,height_cm,mass_kg,hair_color,skin_color,eye_color,birth_year,gender,homeworld_id
+1,Luke Skywalker,172,77.0,blond,fair,blue,19BBY,male,1
+2,C-3PO,167,75.0,,gold,yellow,112BBY,,1
+3,R2-D2,96,32.0,,"white, blue",red,33BBY,,8
+4,Darth Vader,202,136.0,none,white,yellow,41.9BBY,male,1
+5,Leia Organa,150,49.0,brown,light,brown,19BBY,female,2
+6,Owen Lars,178,120.0,"brown, grey",light,blue,52BBY,male,1
+7,Beru Whitesun lars,165,75.0,brown,light,blue,47BBY,female,1
+8,R5-D4,97,32.0,,"white, red",red,,,1
+9,Biggs Darklighter,183,84.0,black,light,brown,24BBY,male,1
+10,Obi-Wan Kenobi,182,77.0,"auburn, white",fair,blue-gray,57BBY,male,20
+11,Anakin Skywalker,188,84.0,blond,fair,blue,41.9BBY,male,1
+12,Wilhuff Tarkin,180,,"auburn, grey",fair,blue,64BBY,male,21
+13,Chewbacca,228,112.0,brown,unknown,blue,200BBY,male,14
+14,Han Solo,180,80.0,brown,fair,brown,29BBY,male,22
+15,Greedo,173,74.0,,green,black,44BBY,male,23
+16,Jabba Desilijic Tiure,175,1358.0,,"green-tan, brown",orange,600BBY,hermaphrodite,24
+17,Wedge Antilles,170,77.0,brown,fair,hazel,21BBY,male,22
+18,Jek Tono Porkins,180,110.0,brown,fair,blue,,male,26
+19,Yoda,66,17.0,white,green,brown,896BBY,male,28
+20,Palpatine,170,75.0,grey,pale,yellow,82BBY,male,8
+21,Boba Fett,183,78.2,black,fair,brown,31.5BBY,male,10
+22,IG-88,200,140.0,none,metal,red,15BBY,none,28
+23,Bossk,190,113.0,none,green,red,53BBY,male,29
+24,Lando Calrissian,177,79.0,black,dark,brown,31BBY,male,30
+25,Lobot,175,79.0,none,light,blue,37BBY,male,6

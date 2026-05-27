@@ -1,0 +1,5 @@
+comment_id,created_at,id,implemented_at,remedy_type,text,updated_at,value
+4,2024-01-20T10:26:00,1,2024-01-21T09:00:00,credit,Remedy note redacted,2024-01-20T10:26:00,50.00
+4,2024-01-22T14:11:00,2,,refund,Remedy note redacted,2024-01-22T14:11:00,150.00
+1,2024-02-01T15:06:00,3,2024-02-02T12:00:00,apology,Remedy note redacted,2024-02-01T15:06:00,
+2,2024-01-25T16:16:00,4,,service_action,Remedy note redacted,2024-01-25T16:16:00,

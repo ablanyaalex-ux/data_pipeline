@@ -1,0 +1,9 @@
+trigger: none
+pr: none
+pool:
+  vmImage: "ubuntu-latest"
+steps:
+  - script: |
+      make test-integration
+    workingDirectory: .
+    displayName: "Run integration tests"

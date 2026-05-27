@@ -1,0 +1,5 @@
+sector_customer_type,sector_customer_type_id,source_file_name
+Communications,1,ref_schemes_20260101.csv
+Energy B2C,2,ref_schemes_20260101.csv
+Energy B2B,3,ref_schemes_20260101.csv
+FRS,4,ref_schemes_20260101.csv

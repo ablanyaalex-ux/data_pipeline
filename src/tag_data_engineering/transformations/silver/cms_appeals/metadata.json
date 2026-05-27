@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "cms",
+  "table": "cms_appeals",
+  "merge_key": "id",
+  "dependencies": [
+    "bronze.cms_appeals"
+  ]
+}

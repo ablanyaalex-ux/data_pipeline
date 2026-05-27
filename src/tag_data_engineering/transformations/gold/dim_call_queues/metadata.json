@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_call_queues",
+  "merge_key": "queue_key",
+  "dependencies": [
+    "silver.puzzel_queues"
+  ]
+}

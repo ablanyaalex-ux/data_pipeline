@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "other",
+  "table": "gov_uk_bank_holidays",
+  "entity": "gov_uk_bank_holidays",
+  "merge_key": ["region", "holiday_date"],
+  "source_format": "jsonl"
+}

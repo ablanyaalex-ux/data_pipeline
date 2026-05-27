@@ -1,0 +1,11 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "other",
+  "table": "myhr_hierarchy_history",
+  "entity": "myhr_hierarchy_history",
+  "merge_key": [
+    "Employee Id",
+    "source_file_name"
+  ],
+  "source_format": "jsonl"
+}

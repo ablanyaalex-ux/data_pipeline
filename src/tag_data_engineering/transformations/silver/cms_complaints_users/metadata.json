@@ -1,0 +1,12 @@
+{
+  "schema": "silver",
+  "pipeline_group": "cms",
+  "table": "cms_complaints_users",
+  "merge_key": [
+    "complaint_id",
+    "user_id"
+  ],
+  "dependencies": [
+    "bronze.cms_complaints_users"
+  ]
+}

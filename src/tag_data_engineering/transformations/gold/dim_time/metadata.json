@@ -1,0 +1,7 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "dim_time",
+  "merge_key": "time_key",
+  "dependencies": []
+}

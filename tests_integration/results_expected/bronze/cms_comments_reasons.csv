@@ -1,0 +1,4 @@
+comment_id,created_at,id,reason_type,text,updated_at
+1,2024-02-01T15:05:00,1,process,Reason text redacted,2024-02-01T15:05:00
+4,2024-01-20T10:25:00,2,evidence,Reason text redacted,2024-01-20T10:25:00
+2,2024-01-25T16:15:00,3,quality,Reason text redacted,2024-01-25T16:15:00

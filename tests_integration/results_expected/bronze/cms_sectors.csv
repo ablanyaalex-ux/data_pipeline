@@ -1,0 +1,7 @@
+active,id,name,symbol
+1,1,Energy,energy
+1,2,Telecoms,telecoms
+1,3,Financial Services,financial_services
+1,4,Water,water
+0,5,Retail,retail
+1,6,Transport,transport

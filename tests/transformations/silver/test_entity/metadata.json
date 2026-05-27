@@ -1,0 +1,7 @@
+{
+  "schema": "silver",
+  "pipeline_group": "test",
+  "table": "test_entity",
+  "merge_key": "id",
+  "dependencies": ["bronze.test_entity"]
+}

@@ -1,0 +1,4 @@
+region,holiday_date,holiday_name,notes,is_bunting,source_file_name
+england-and-wales,2025-01-01,New Year's Day,,True,gov_uk_bank_holidays_20260101.csv
+england-and-wales,2025-04-18,Good Friday,,False,gov_uk_bank_holidays_20260101.csv
+england-and-wales,2025-05-05,Early May bank holiday,,True,gov_uk_bank_holidays_20260101.csv

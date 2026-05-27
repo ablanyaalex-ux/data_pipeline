@@ -1,0 +1,73 @@
+<edmx:Edmx xmlns="http://docs.oasis-open.org/odata/ns/edm" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+  <edmx:DataServices>
+    <Schema Namespace="microsoft.graph">
+      <EntityType Name="user">
+        <Property Name="signInActivity" Type="Edm.String" />
+        <Property Name="accountEnabled" Type="Edm.String" />
+        <Property Name="ageGroup" Type="Edm.String" />
+        <Property Name="assignedLicenses" Type="Edm.String" />
+        <Property Name="assignedPlans" Type="Edm.String" />
+        <Property Name="authorizationInfo" Type="Edm.String" />
+        <Property Name="businessPhones" Type="Edm.String" />
+        <Property Name="city" Type="Edm.String" />
+        <Property Name="companyName" Type="Edm.String" />
+        <Property Name="consentProvidedForMinor" Type="Edm.String" />
+        <Property Name="country" Type="Edm.String" />
+        <Property Name="createdDateTime" Type="Edm.String" />
+        <Property Name="creationType" Type="Edm.String" />
+        <Property Name="customSecurityAttributes" Type="Edm.String" />
+        <Property Name="department" Type="Edm.String" />
+        <Property Name="displayName" Type="Edm.String" />
+        <Property Name="employeeHireDate" Type="Edm.String" />
+        <Property Name="employeeId" Type="Edm.String" />
+        <Property Name="employeeLeaveDateTime" Type="Edm.String" />
+        <Property Name="employeeOrgData" Type="Edm.String" />
+        <Property Name="employeeType" Type="Edm.String" />
+        <Property Name="externalUserState" Type="Edm.String" />
+        <Property Name="externalUserStateChangeDateTime" Type="Edm.String" />
+        <Property Name="faxNumber" Type="Edm.String" />
+        <Property Name="givenName" Type="Edm.String" />
+        <Property Name="identities" Type="Edm.String" />
+        <Property Name="imAddresses" Type="Edm.String" />
+        <Property Name="isManagementRestricted" Type="Edm.String" />
+        <Property Name="isResourceAccount" Type="Edm.String" />
+        <Property Name="jobTitle" Type="Edm.String" />
+        <Property Name="lastPasswordChangeDateTime" Type="Edm.String" />
+        <Property Name="legalAgeGroupClassification" Type="Edm.String" />
+        <Property Name="licenseAssignmentStates" Type="Edm.String" />
+        <Property Name="mail" Type="Edm.String" />
+        <Property Name="mailNickname" Type="Edm.String" />
+        <Property Name="mobilePhone" Type="Edm.String" />
+        <Property Name="officeLocation" Type="Edm.String" />
+        <Property Name="onPremisesDistinguishedName" Type="Edm.String" />
+        <Property Name="onPremisesDomainName" Type="Edm.String" />
+        <Property Name="onPremisesExtensionAttributes" Type="Edm.String" />
+        <Property Name="onPremisesImmutableId" Type="Edm.String" />
+        <Property Name="onPremisesLastSyncDateTime" Type="Edm.String" />
+        <Property Name="onPremisesProvisioningErrors" Type="Edm.String" />
+        <Property Name="onPremisesSamAccountName" Type="Edm.String" />
+        <Property Name="onPremisesSecurityIdentifier" Type="Edm.String" />
+        <Property Name="onPremisesSyncEnabled" Type="Edm.String" />
+        <Property Name="onPremisesUserPrincipalName" Type="Edm.String" />
+        <Property Name="otherMails" Type="Edm.String" />
+        <Property Name="passwordPolicies" Type="Edm.String" />
+        <Property Name="passwordProfile" Type="Edm.String" />
+        <Property Name="postalCode" Type="Edm.String" />
+        <Property Name="preferredDataLocation" Type="Edm.String" />
+        <Property Name="preferredLanguage" Type="Edm.String" />
+        <Property Name="provisionedPlans" Type="Edm.String" />
+        <Property Name="proxyAddresses" Type="Edm.String" />
+        <Property Name="securityIdentifier" Type="Edm.String" />
+        <Property Name="serviceProvisioningErrors" Type="Edm.String" />
+        <Property Name="showInAddressList" Type="Edm.String" />
+        <Property Name="signInSessionsValidFromDateTime" Type="Edm.String" />
+        <Property Name="state" Type="Edm.String" />
+        <Property Name="streetAddress" Type="Edm.String" />
+        <Property Name="surname" Type="Edm.String" />
+        <Property Name="usageLocation" Type="Edm.String" />
+        <Property Name="userPrincipalName" Type="Edm.String" />
+        <Property Name="userType" Type="Edm.String" />
+        <Property Name="id" Type="Edm.String" /><Property Name="ext_app_001_userFlag" Type="Edm.String" /><Property Name="ext_app_001_groupFlag" Type="Edm.String" /><Property Name="extension_67937d3f86124e998e441be08c6e40f5_TeamsGrpOwnerNodeID" Type="Edm.String" /><Property Name="extension_67937d3f86124e998e441be08c6e40f5_cascadeParentNodeID" Type="Edm.String" /><Property Name="extension_67937d3f86124e998e441be08c6e40f5_CompanyHierarchy" Type="Edm.String" /><Property Name="extension_67937d3f86124e998e441be08c6e40f5_UserTeamsGrp" Type="Edm.String" /><Property Name="extension_67937d3f86124e998e441be08c6e40f5_DeptTeamsGrp" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_extensionAttribute15" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_employeeType" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_employeeLastWorkingDate" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_businessRoles" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_audio" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_company" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_uPNDomain" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_businessUnit" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_employeeStartDate" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_employeeNumber" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_employeeLeaveDate" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_cascadeNode1" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_cascadeNodeID" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_cascadeNode9" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_cascadeNode8" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_cascadeNode7" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_cascadeNode6" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_cascadeNode5" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_cascadeNode4" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_cascadeNode3" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_cascadeNode2" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_cascadeNode10" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_employeeKnownAs" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_info" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_credentials" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_mobile" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_msExchHideFromAddressLists" Type="Edm.String" /><Property Name="extension_5b87f5442af34f989fd434e1049036fa_EmploymentType" Type="Edm.String" /></EntityType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

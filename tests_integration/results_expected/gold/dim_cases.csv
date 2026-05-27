@@ -1,0 +1,7 @@
+case_id,sector_customer_type_id,current_status,company_id,created_at
+1001,2,investigation,10,2024-01-20 10:00:00
+1002,2,closed_resolved,10,2024-01-12 09:00:00
+1003,4,new_complaint,11,2024-02-01 10:30:00
+1004,2,decision_made,12,2024-01-08 09:00:00
+1005,2,closed_withdrawn,10,2024-01-23 09:00:00
+1006,4,investigation,13,2024-01-29 11:00:00

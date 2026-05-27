@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "other",
+  "table": "puzzel_agents",
+  "merge_key": "agent_id",
+  "dependencies": [
+    "bronze.puzzel_agents"
+  ]
+}

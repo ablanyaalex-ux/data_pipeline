@@ -1,0 +1,22 @@
+{
+  "entity": "puzzel_call_events",
+  "pipeline_group": "other",
+  "extraction_mode": "incremental",
+  "max_file_size_mb": 100,
+  "output_format": "jsonl",
+  "extractor": "sql_server",
+  "extractor_config": {
+    "source_system": "puzzle",
+    "source_secret_key": "puzzel-mssql-credentials",
+    "source_schema": "dbo",
+    "source_table": "call_events",
+    "incremental": {
+      "columns": [
+        {
+          "name": "dte_updated",
+          "type": "DateTime"
+        }
+      ]
+    }
+  }
+}

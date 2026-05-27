@@ -1,0 +1,14 @@
+{
+  "entity": "popla_appellant_cases",
+  "pipeline_group": "other",
+  "extraction_mode": "full_refresh",
+  "max_file_size_mb": 100,
+  "output_format": "jsonl",
+  "extractor": "mysql",
+  "extractor_config": {
+    "source_system": "popla",
+    "source_secret_key": "lumin-prod-aws-popla-mysql-credentials",
+    "source_database": "casedb",
+    "source_table": "appellant_case"
+  }
+}

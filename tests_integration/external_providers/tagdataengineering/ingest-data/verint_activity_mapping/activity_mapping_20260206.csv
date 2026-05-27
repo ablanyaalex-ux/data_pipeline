@@ -1,0 +1,11 @@
+ActivityMappingID,ActivityName,ActivityType,ActivityGrouping,Active,ActiveStart,ActiveEnd
+1,Customer Call,Inbound,Customer Service,1,2023-01-01,
+2,Customer Email,Email,Customer Service,1,2023-01-01,
+3,Manager Review,Internal,Management,1,2023-01-01,
+4,Training Session,Internal,Development,0,2023-01-01,2023-12-31
+5,System Maintenance,Internal,IT,1,2023-01-01,
+6,Customer Chat,Chat,Customer Service,1,2023-06-01,
+7,Team Meeting,Internal,Management,1,2023-01-01,
+8,Break Time,Break,Personal,1,2023-01-01,
+9,Lunch Break,Break,Personal,1,2023-01-01,
+10,Quality Review,Internal,Quality Assurance,1,2023-01-01,

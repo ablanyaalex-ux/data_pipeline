@@ -1,0 +1,9 @@
+role_id,role_name,role_symbol,description,role_group
+1,Administrator,admin,System administrator with full access,consumer
+2,Case Handler,case_handler,Handles complaint cases,company_user
+3,Senior Case Handler,senior_case_handler,Senior staff for complex cases,internal
+4,Team Leader,team_leader,Manages a team of case handlers,internal
+5,Ombudsman,ombudsman,Final decision maker,internal
+6,Consumer,consumer,Customer making a complaint,internal
+7,Company Representative,company_rep,Represents the company in complaints,internal
+8,Quality Assurance,qa,Reviews case quality,internal

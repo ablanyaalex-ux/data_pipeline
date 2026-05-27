@@ -1,0 +1,2 @@
+case_id,consumer_response_date,consumer_response_user_id,consumer_response_action,supplier_response_date,supplier_response_user_id,supplier_response_action,system_response_date,system_response_user_id,system_response_action
+1001,2023-02-01 10:00:00,1,pending appeal,,,,,,

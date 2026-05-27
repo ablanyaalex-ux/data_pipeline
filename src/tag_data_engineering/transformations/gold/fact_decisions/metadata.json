@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "fact_decisions",
+  "merge_key": "decision_id",
+  "dependencies": [
+    "silver.cms_decisions"
+  ]
+}

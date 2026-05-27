@@ -1,0 +1,5 @@
+event_description,event_type,is_call_answered,is_dropped,is_queue_answered,is_timed_out,is_volume,result_code,source_file_name
+Call - Answered,c,1,0,0,0,0,k,puzzel_call_event_codes_20260101.csv
+Queue - Dropped,q,0,1,0,0,1,h,puzzel_call_event_codes_20260101.csv
+Queue - Answered,q,0,0,1,0,1,k,puzzel_call_event_codes_20260101.csv
+Queue - Timed Out,q,0,0,0,1,0,t,puzzel_call_event_codes_20260101.csv

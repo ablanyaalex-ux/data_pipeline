@@ -1,0 +1,1320 @@
+{
+  "login": {
+    "test-tenant-id": {
+      "oauth2": {
+        "v2.0": {
+          "token": {
+            "token_type": "Bearer",
+            "expires_in": 3600,
+            "ext_expires_in": 3600,
+            "access_token": "test-access-token",
+            "scope": "https://graph.microsoft.com/.default"
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "entityTypes": {
+      "user": {
+        "properties": [
+          "signInActivity",
+          "accountEnabled",
+          "ageGroup",
+          "assignedLicenses",
+          "assignedPlans",
+          "authorizationInfo",
+          "businessPhones",
+          "city",
+          "companyName",
+          "consentProvidedForMinor",
+          "country",
+          "createdDateTime",
+          "creationType",
+          "customSecurityAttributes",
+          "department",
+          "displayName",
+          "employeeHireDate",
+          "employeeId",
+          "employeeLeaveDateTime",
+          "employeeOrgData",
+          "employeeType",
+          "externalUserState",
+          "externalUserStateChangeDateTime",
+          "faxNumber",
+          "givenName",
+          "identities",
+          "imAddresses",
+          "isManagementRestricted",
+          "isResourceAccount",
+          "jobTitle",
+          "lastPasswordChangeDateTime",
+          "legalAgeGroupClassification",
+          "licenseAssignmentStates",
+          "mail",
+          "mailNickname",
+          "mobilePhone",
+          "officeLocation",
+          "onPremisesDistinguishedName",
+          "onPremisesDomainName",
+          "onPremisesExtensionAttributes",
+          "onPremisesImmutableId",
+          "onPremisesLastSyncDateTime",
+          "onPremisesProvisioningErrors",
+          "onPremisesSamAccountName",
+          "onPremisesSecurityIdentifier",
+          "onPremisesSyncEnabled",
+          "onPremisesUserPrincipalName",
+          "otherMails",
+          "passwordPolicies",
+          "passwordProfile",
+          "postalCode",
+          "preferredDataLocation",
+          "preferredLanguage",
+          "provisionedPlans",
+          "proxyAddresses",
+          "securityIdentifier",
+          "serviceProvisioningErrors",
+          "showInAddressList",
+          "signInSessionsValidFromDateTime",
+          "state",
+          "streetAddress",
+          "surname",
+          "usageLocation",
+          "userPrincipalName",
+          "userType",
+          "id",
+          "ext_app_001_userFlag",
+          "ext_app_001_groupFlag",
+          "extension_67937d3f86124e998e441be08c6e40f5_TeamsGrpOwnerNodeID",
+          "extension_67937d3f86124e998e441be08c6e40f5_cascadeParentNodeID",
+          "extension_67937d3f86124e998e441be08c6e40f5_CompanyHierarchy",
+          "extension_67937d3f86124e998e441be08c6e40f5_UserTeamsGrp",
+          "extension_67937d3f86124e998e441be08c6e40f5_DeptTeamsGrp",
+          "extension_5b87f5442af34f989fd434e1049036fa_extensionAttribute15",
+          "extension_5b87f5442af34f989fd434e1049036fa_employeeType",
+          "extension_5b87f5442af34f989fd434e1049036fa_employeeLastWorkingDate",
+          "extension_5b87f5442af34f989fd434e1049036fa_businessRoles",
+          "extension_5b87f5442af34f989fd434e1049036fa_audio",
+          "extension_5b87f5442af34f989fd434e1049036fa_company",
+          "extension_5b87f5442af34f989fd434e1049036fa_uPNDomain",
+          "extension_5b87f5442af34f989fd434e1049036fa_businessUnit",
+          "extension_5b87f5442af34f989fd434e1049036fa_employeeStartDate",
+          "extension_5b87f5442af34f989fd434e1049036fa_employeeNumber",
+          "extension_5b87f5442af34f989fd434e1049036fa_employeeLeaveDate",
+          "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode1",
+          "extension_5b87f5442af34f989fd434e1049036fa_cascadeNodeID",
+          "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode9",
+          "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode8",
+          "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode7",
+          "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode6",
+          "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode5",
+          "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode4",
+          "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode3",
+          "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode2",
+          "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode10",
+          "extension_5b87f5442af34f989fd434e1049036fa_employeeKnownAs",
+          "extension_5b87f5442af34f989fd434e1049036fa_info",
+          "extension_5b87f5442af34f989fd434e1049036fa_credentials",
+          "extension_5b87f5442af34f989fd434e1049036fa_mobile",
+          "extension_5b87f5442af34f989fd434e1049036fa_msExchHideFromAddressLists",
+          "extension_5b87f5442af34f989fd434e1049036fa_EmploymentType"
+        ]
+      }
+    }
+  },
+  "external_users": [
+    {
+      "signInActivity": "signInActivity_val_001",
+      "accountEnabled": "true",
+      "ageGroup": "ageGroup_val_001",
+      "assignedLicenses": "assignedLicenses_val_001",
+      "assignedPlans": "assignedPlans_val_001",
+      "authorizationInfo": "authorizationInfo_val_001",
+      "businessPhones": "businessPhones_val_001",
+      "city": "city_val_001",
+      "companyName": "companyName_val_001",
+      "consentProvidedForMinor": "consentProvidedForMinor_val_001",
+      "country": "country_val_001",
+      "createdDateTime": "2025-01-01T08:30:00",
+      "creationType": "creationType_val_001",
+      "customSecurityAttributes": "customSecurityAttributes_val_001",
+      "department": "department_val_001",
+      "displayName": "displayName_val_001",
+      "employeeHireDate": "2020-01-01",
+      "employeeId": "employeeId_val_001",
+      "employeeLeaveDateTime": "2025-12-01T17:00:00",
+      "employeeOrgData": "employeeOrgData_val_001",
+      "employeeType": "employeeType_val_001",
+      "externalUserState": "externalUserState_val_001",
+      "externalUserStateChangeDateTime": "externalUserStateChangeDateTime_val_001",
+      "faxNumber": "faxNumber_val_001",
+      "givenName": "givenName_val_001",
+      "identities": "identities_val_001",
+      "imAddresses": "imAddresses_val_001",
+      "isManagementRestricted": "isManagementRestricted_val_001",
+      "isResourceAccount": "isResourceAccount_val_001",
+      "jobTitle": "jobTitle_val_001",
+      "lastPasswordChangeDateTime": "2025-02-01T10:00:00",
+      "legalAgeGroupClassification": "legalAgeGroupClassification_val_001",
+      "licenseAssignmentStates": "licenseAssignmentStates_val_001",
+      "mail": "mail_val_001",
+      "mailNickname": "mailNickname_val_001",
+      "mobilePhone": "mobilePhone_val_001",
+      "officeLocation": "officeLocation_val_001",
+      "onPremisesDistinguishedName": "onPremisesDistinguishedName_val_001",
+      "onPremisesDomainName": "onPremisesDomainName_val_001",
+      "onPremisesExtensionAttributes": "onPremisesExtensionAttributes_val_001",
+      "onPremisesImmutableId": "onPremisesImmutableId_val_001",
+      "onPremisesLastSyncDateTime": "onPremisesLastSyncDateTime_val_001",
+      "onPremisesProvisioningErrors": "onPremisesProvisioningErrors_val_001",
+      "onPremisesSamAccountName": "onPremisesSamAccountName_val_001",
+      "onPremisesSecurityIdentifier": "onPremisesSecurityIdentifier_val_001",
+      "onPremisesSyncEnabled": "onPremisesSyncEnabled_val_001",
+      "onPremisesUserPrincipalName": "onPremisesUserPrincipalName_val_001",
+      "otherMails": "otherMails_val_001",
+      "passwordPolicies": "passwordPolicies_val_001",
+      "passwordProfile": "passwordProfile_val_001",
+      "postalCode": "postalCode_val_001",
+      "preferredDataLocation": "preferredDataLocation_val_001",
+      "preferredLanguage": "preferredLanguage_val_001",
+      "provisionedPlans": "provisionedPlans_val_001",
+      "proxyAddresses": "proxyAddresses_val_001",
+      "securityIdentifier": "securityIdentifier_val_001",
+      "serviceProvisioningErrors": "serviceProvisioningErrors_val_001",
+      "showInAddressList": "showInAddressList_val_001",
+      "signInSessionsValidFromDateTime": "signInSessionsValidFromDateTime_val_001",
+      "state": "state_val_001",
+      "streetAddress": "streetAddress_val_001",
+      "surname": "surname_val_001",
+      "usageLocation": "usageLocation_val_001",
+      "userPrincipalName": "userPrincipalName_val_001",
+      "userType": "userType_val_001",
+      "id": "external-user-001",
+      "ext_app_001_userFlag": "ext_app_001_userFlag_val_001",
+      "ext_app_001_groupFlag": "ext_app_001_groupFlag_val_001",
+      "extension_67937d3f86124e998e441be08c6e40f5_TeamsGrpOwnerNodeID": "extension_67937d3f86124e998e441be08c6e40f5_TeamsGrpOwnerNodeID_val_001",
+      "extension_67937d3f86124e998e441be08c6e40f5_cascadeParentNodeID": "extension_67937d3f86124e998e441be08c6e40f5_cascadeParentNodeID_val_001",
+      "extension_67937d3f86124e998e441be08c6e40f5_CompanyHierarchy": "extension_67937d3f86124e998e441be08c6e40f5_CompanyHierarchy_val_001",
+      "extension_67937d3f86124e998e441be08c6e40f5_UserTeamsGrp": "extension_67937d3f86124e998e441be08c6e40f5_UserTeamsGrp_val_001",
+      "extension_67937d3f86124e998e441be08c6e40f5_DeptTeamsGrp": "extension_67937d3f86124e998e441be08c6e40f5_DeptTeamsGrp_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_extensionAttribute15": "extension_5b87f5442af34f989fd434e1049036fa_extensionAttribute15_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeType": "extension_5b87f5442af34f989fd434e1049036fa_employeeType_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeLastWorkingDate": "extension_5b87f5442af34f989fd434e1049036fa_employeeLastWorkingDate_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_businessRoles": "extension_5b87f5442af34f989fd434e1049036fa_businessRoles_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_audio": "extension_5b87f5442af34f989fd434e1049036fa_audio_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_company": "extension_5b87f5442af34f989fd434e1049036fa_company_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_uPNDomain": "extension_5b87f5442af34f989fd434e1049036fa_uPNDomain_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_businessUnit": "extension_5b87f5442af34f989fd434e1049036fa_businessUnit_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeStartDate": "2019-06-01",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeNumber": "extension_5b87f5442af34f989fd434e1049036fa_employeeNumber_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeLeaveDate": "extension_5b87f5442af34f989fd434e1049036fa_employeeLeaveDate_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode1": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode1_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNodeID": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNodeID_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode9": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode9_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode8": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode8_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode7": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode7_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode6": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode6_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode5": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode5_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode4": "Operations",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode3": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode3_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode2": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode2_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode10": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode10_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeKnownAs": "extension_5b87f5442af34f989fd434e1049036fa_employeeKnownAs_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_info": "extension_5b87f5442af34f989fd434e1049036fa_info_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_credentials": "extension_5b87f5442af34f989fd434e1049036fa_credentials_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_mobile": "extension_5b87f5442af34f989fd434e1049036fa_mobile_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_msExchHideFromAddressLists": "extension_5b87f5442af34f989fd434e1049036fa_msExchHideFromAddressLists_val_001",
+      "extension_5b87f5442af34f989fd434e1049036fa_EmploymentType": "extension_5b87f5442af34f989fd434e1049036fa_EmploymentType_val_001"
+    },
+    {
+      "signInActivity": "signInActivity_val_002",
+      "accountEnabled": "false",
+      "ageGroup": "ageGroup_val_002",
+      "assignedLicenses": "assignedLicenses_val_002",
+      "assignedPlans": "assignedPlans_val_002",
+      "authorizationInfo": "authorizationInfo_val_002",
+      "businessPhones": "businessPhones_val_002",
+      "city": "city_val_002",
+      "companyName": "companyName_val_002",
+      "consentProvidedForMinor": "consentProvidedForMinor_val_002",
+      "country": "country_val_002",
+      "createdDateTime": "2025-01-02T08:30:00",
+      "creationType": "creationType_val_002",
+      "customSecurityAttributes": "customSecurityAttributes_val_002",
+      "department": "department_val_002",
+      "displayName": "displayName_val_002",
+      "employeeHireDate": "2020-01-02",
+      "employeeId": "employeeId_val_002",
+      "employeeLeaveDateTime": "2025-12-02T17:00:00",
+      "employeeOrgData": "employeeOrgData_val_002",
+      "employeeType": "employeeType_val_002",
+      "externalUserState": "externalUserState_val_002",
+      "externalUserStateChangeDateTime": "externalUserStateChangeDateTime_val_002",
+      "faxNumber": "faxNumber_val_002",
+      "givenName": "givenName_val_002",
+      "identities": "identities_val_002",
+      "imAddresses": "imAddresses_val_002",
+      "isManagementRestricted": "isManagementRestricted_val_002",
+      "isResourceAccount": "isResourceAccount_val_002",
+      "jobTitle": "jobTitle_val_002",
+      "lastPasswordChangeDateTime": "2025-02-02T10:00:00",
+      "legalAgeGroupClassification": "legalAgeGroupClassification_val_002",
+      "licenseAssignmentStates": "licenseAssignmentStates_val_002",
+      "mail": "mail_val_002",
+      "mailNickname": "mailNickname_val_002",
+      "mobilePhone": "mobilePhone_val_002",
+      "officeLocation": "officeLocation_val_002",
+      "onPremisesDistinguishedName": "onPremisesDistinguishedName_val_002",
+      "onPremisesDomainName": "onPremisesDomainName_val_002",
+      "onPremisesExtensionAttributes": "onPremisesExtensionAttributes_val_002",
+      "onPremisesImmutableId": "onPremisesImmutableId_val_002",
+      "onPremisesLastSyncDateTime": "onPremisesLastSyncDateTime_val_002",
+      "onPremisesProvisioningErrors": "onPremisesProvisioningErrors_val_002",
+      "onPremisesSamAccountName": "onPremisesSamAccountName_val_002",
+      "onPremisesSecurityIdentifier": "onPremisesSecurityIdentifier_val_002",
+      "onPremisesSyncEnabled": "onPremisesSyncEnabled_val_002",
+      "onPremisesUserPrincipalName": "onPremisesUserPrincipalName_val_002",
+      "otherMails": "otherMails_val_002",
+      "passwordPolicies": "passwordPolicies_val_002",
+      "passwordProfile": "passwordProfile_val_002",
+      "postalCode": "postalCode_val_002",
+      "preferredDataLocation": "preferredDataLocation_val_002",
+      "preferredLanguage": "preferredLanguage_val_002",
+      "provisionedPlans": "provisionedPlans_val_002",
+      "proxyAddresses": "proxyAddresses_val_002",
+      "securityIdentifier": "securityIdentifier_val_002",
+      "serviceProvisioningErrors": "serviceProvisioningErrors_val_002",
+      "showInAddressList": "showInAddressList_val_002",
+      "signInSessionsValidFromDateTime": "signInSessionsValidFromDateTime_val_002",
+      "state": "state_val_002",
+      "streetAddress": "streetAddress_val_002",
+      "surname": "surname_val_002",
+      "usageLocation": "usageLocation_val_002",
+      "userPrincipalName": "userPrincipalName_val_002",
+      "userType": "userType_val_002",
+      "id": "external-user-002",
+      "ext_app_001_userFlag": "ext_app_001_userFlag_val_002",
+      "ext_app_001_groupFlag": "ext_app_001_groupFlag_val_002",
+      "extension_67937d3f86124e998e441be08c6e40f5_TeamsGrpOwnerNodeID": "extension_67937d3f86124e998e441be08c6e40f5_TeamsGrpOwnerNodeID_val_002",
+      "extension_67937d3f86124e998e441be08c6e40f5_cascadeParentNodeID": "extension_67937d3f86124e998e441be08c6e40f5_cascadeParentNodeID_val_002",
+      "extension_67937d3f86124e998e441be08c6e40f5_CompanyHierarchy": "extension_67937d3f86124e998e441be08c6e40f5_CompanyHierarchy_val_002",
+      "extension_67937d3f86124e998e441be08c6e40f5_UserTeamsGrp": "extension_67937d3f86124e998e441be08c6e40f5_UserTeamsGrp_val_002",
+      "extension_67937d3f86124e998e441be08c6e40f5_DeptTeamsGrp": "extension_67937d3f86124e998e441be08c6e40f5_DeptTeamsGrp_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_extensionAttribute15": "extension_5b87f5442af34f989fd434e1049036fa_extensionAttribute15_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeType": "extension_5b87f5442af34f989fd434e1049036fa_employeeType_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeLastWorkingDate": "extension_5b87f5442af34f989fd434e1049036fa_employeeLastWorkingDate_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_businessRoles": "extension_5b87f5442af34f989fd434e1049036fa_businessRoles_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_audio": "extension_5b87f5442af34f989fd434e1049036fa_audio_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_company": "extension_5b87f5442af34f989fd434e1049036fa_company_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_uPNDomain": "extension_5b87f5442af34f989fd434e1049036fa_uPNDomain_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_businessUnit": "extension_5b87f5442af34f989fd434e1049036fa_businessUnit_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeStartDate": "2019-06-02",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeNumber": "extension_5b87f5442af34f989fd434e1049036fa_employeeNumber_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeLeaveDate": "extension_5b87f5442af34f989fd434e1049036fa_employeeLeaveDate_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode1": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode1_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNodeID": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNodeID_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode9": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode9_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode8": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode8_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode7": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode7_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode6": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode6_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode5": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode5_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode4": "Parking Operations",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode3": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode3_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode2": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode2_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode10": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode10_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_employeeKnownAs": "extension_5b87f5442af34f989fd434e1049036fa_employeeKnownAs_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_info": "extension_5b87f5442af34f989fd434e1049036fa_info_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_credentials": "extension_5b87f5442af34f989fd434e1049036fa_credentials_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_mobile": "extension_5b87f5442af34f989fd434e1049036fa_mobile_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_msExchHideFromAddressLists": "extension_5b87f5442af34f989fd434e1049036fa_msExchHideFromAddressLists_val_002",
+      "extension_5b87f5442af34f989fd434e1049036fa_EmploymentType": "extension_5b87f5442af34f989fd434e1049036fa_EmploymentType_val_002"
+    }
+  ],
+  "applications": {
+    "value": [
+      {
+        "id": "app-001",
+        "displayName": "Application 001"
+      },
+      {
+        "id": "app-002",
+        "displayName": "Application 002"
+      }
+    ]
+  },
+  "extensionProperties_app-001": {
+    "value": [
+      {
+        "id": "app-001-ext-01",
+        "name": "ext_app_001_userFlag",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "app-001-ext-02",
+        "name": "ext_app_001_groupFlag",
+        "targetObjects": [
+          "Group"
+        ]
+      },
+      {
+        "id": "extension_67937d3f86124e998e441be08c6e40f5_TeamsGrpOwnerNodeID",
+        "name": "extension_67937d3f86124e998e441be08c6e40f5_TeamsGrpOwnerNodeID",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_67937d3f86124e998e441be08c6e40f5_cascadeParentNodeID",
+        "name": "extension_67937d3f86124e998e441be08c6e40f5_cascadeParentNodeID",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_67937d3f86124e998e441be08c6e40f5_CompanyHierarchy",
+        "name": "extension_67937d3f86124e998e441be08c6e40f5_CompanyHierarchy",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_67937d3f86124e998e441be08c6e40f5_UserTeamsGrp",
+        "name": "extension_67937d3f86124e998e441be08c6e40f5_UserTeamsGrp",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_67937d3f86124e998e441be08c6e40f5_DeptTeamsGrp",
+        "name": "extension_67937d3f86124e998e441be08c6e40f5_DeptTeamsGrp",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_extensionAttribute15",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_extensionAttribute15",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeType",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_employeeType",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeLastWorkingDate",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_employeeLastWorkingDate",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_businessRoles",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_businessRoles",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_audio",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_audio",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_company",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_company",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_uPNDomain",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_uPNDomain",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_businessUnit",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_businessUnit",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeStartDate",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_employeeStartDate",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeNumber",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_employeeNumber",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeLeaveDate",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_employeeLeaveDate",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode1",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode1",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNodeID",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNodeID",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode9",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode9",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode8",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode8",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode7",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode7",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode6",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode6",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode5",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode5",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode4",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode4",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode3",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode3",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode2",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode2",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode10",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode10",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeKnownAs",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_employeeKnownAs",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_info",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_info",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_credentials",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_credentials",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_mobile",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_mobile",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_msExchHideFromAddressLists",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_msExchHideFromAddressLists",
+        "targetObjects": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_EmploymentType",
+        "name": "extension_5b87f5442af34f989fd434e1049036fa_EmploymentType",
+        "targetObjects": [
+          "User"
+        ]
+      }
+    ]
+  },
+  "extensionProperties_app-002": {
+    "value": [
+      {
+        "id": "app-002-ext-01",
+        "name": "ext_app_002_userRole",
+        "targetObjects": [
+          "User"
+        ]
+      }
+    ]
+  },
+  "schemaExtensions": {
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#schemaExtensions",
+    "@odata.count": 7,
+    "value": [
+      {
+        "id": "adatumisv_courses",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extdnxzf5t7_puttidevices1",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extuveioj8y_connectuser",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "exti562qgnj_putti1devices",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extsw1r64q1_putti2devices",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extdcvbosos_putti14742492181506611290",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext7ogdch0w_putti15017288881263231993",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "techmikael_GenericSchema",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extkh2zr49b_notifications",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extv8fta6be_ClaimSchemaExtension",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extcdss8hgo_actor",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extoj1uldkl_VDUserExtension",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext4x0vlwn5_governorExtension2",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext88mj6u49_governorExtension",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extcbx6z2d4_UserExt",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "jsuri_birthdayV2",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extjjsqfphf_vbaScanStatus",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext8uiii04p_um",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext2j5y6eqq_linkeduser",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext8p2ijc52_managementuser",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extxh3233ah_managementcommon",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extmxg24w3n_carModelOfUser",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "exte3wwr7ti_slackeguserinformation",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extyaygmo2m_actor",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extm8rgx27w_awkapoors",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext3hmgyd49_awkapoor",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extq5trfdv9_projects",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext8huvpuot_projects",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extbo8c6vo8_um",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext29v4xyqr_um",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "aixconcept_MNSproUserV1",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "gmpoc_UserDealerSchema",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extazz9btdm_classificationGroup",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extxkvbjpbf_startUMA",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extpwmnwie2_attributes",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "exte8z91kzg_bhsaxter",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext9idivbbt_sap",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extsxl5f9oa_gvuser",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extweeey8zp_IDTry",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extaj0tl5yo_bhsExtensionAttributes",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "cayodev_auext",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extqi715v5a_cciLicense",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extrlu4lojq_userExtensions",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extvxrujhwg_extleapidconsent",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext0orstp7s_csvsyncbox",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extdtcu1cfg_nlegtest",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extt9kdhfwh_schemaExt1",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "exttmtrq4tf_acesUserExtensionProps",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extl44kejst_nlegtest222",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extg7o9xb0r_impulsbdvagUserImportB",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extvfhy1as2_extension",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extx7twtief_mobileExt",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext9da417ee_cnProperty",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "exts8sy6qub_ExtensionTest",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extgsseiqhn_cn",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext4rlmn0v0_demo1",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extvwxgiltx_demo1",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extys1wmql5_nocloudofficeuid",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extuz3fb4nb_demo1",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extok0pjxyi_sourcePrimaryKeySchemaExt",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extko0gk7o8_sourcePrimaryKeySchemaExt",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extwcdj2xiz_aaeextensions",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext3yjgq607_companyAccountCodeSchema",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extmexcanos_sites",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extk5e4nso6_patientDetails",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extirhxn6xb_tagula",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "exta70bcq0t_beezycustomdata",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extovwfl4qe_department",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extsll58upp_GalloUser",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extqxt1e15s_sourcePrimaryKeySchemaExt",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "exthy1mkq3y_SiteAuditProperties",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extefdgxgb1_vssmgmtuserdata",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extlhskuais_UserSacyrExtension",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext6chn5zae_UserSacyrExtension",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extsv8y0rt0_UserSacyrExtension",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext4hi3bik2_UserSacyrExtension",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extum9qjhx6_imdlproperties",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extjy3sn7t3_imdl",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext1mt15bm8_eScribeUserProfile",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "ext0ysiyhfz_ExchangeSettings",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "smprate_LO",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extbm9rgd6x_adminToolExtension",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "itab_userproperytextensions",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "iqos_imdluser",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extbbb36prt_testSchemaExtension",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_67937d3f86124e998e441be08c6e40f5_TeamsGrpOwnerNodeID",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_67937d3f86124e998e441be08c6e40f5_cascadeParentNodeID",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_67937d3f86124e998e441be08c6e40f5_CompanyHierarchy",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_67937d3f86124e998e441be08c6e40f5_UserTeamsGrp",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_67937d3f86124e998e441be08c6e40f5_DeptTeamsGrp",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_extensionAttribute15",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeType",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeLastWorkingDate",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_businessRoles",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_audio",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_company",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_uPNDomain",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_businessUnit",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeStartDate",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeNumber",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeLeaveDate",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode1",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNodeID",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode9",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode8",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode7",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode6",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode5",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode4",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode3",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode2",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_cascadeNode10",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_employeeKnownAs",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_info",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_credentials",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_mobile",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_msExchHideFromAddressLists",
+        "targetTypes": [
+          "User"
+        ]
+      },
+      {
+        "id": "extension_5b87f5442af34f989fd434e1049036fa_EmploymentType",
+        "targetTypes": [
+          "User"
+        ]
+      }
+    ]
+  }
+}

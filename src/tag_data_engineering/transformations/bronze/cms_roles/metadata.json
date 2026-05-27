@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "cms",
+  "table": "cms_roles",
+  "entity": "cms_roles",
+  "merge_key": "id",
+  "source_format": "jsonl"
+}

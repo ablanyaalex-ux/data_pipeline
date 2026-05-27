@@ -1,0 +1,4 @@
+case_status,case_volume,case_volume_gbp,forecast_type,label,source_file_name,version,wc_date,year
+Fcast_AddChecks,476.8330074,0,Budget,Communications,finance_weekly_budgets_20260101.csv,2026 Budget (Weekly),05/01/2026,2026
+Fcast_AddChecks,124.5,0,Budget,Energy,finance_weekly_budgets_20260101.csv,2026 Budget (Weekly),12/01/2026,2026
+Fcast_AddChecks,482.1669926,0,Budget,Communications,finance_weekly_budgets_20260101.csv,2026 Budget (Weekly),29/12/2025,2026

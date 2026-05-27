@@ -1,0 +1,3 @@
+account_locked,disabled,email,login_attempts,name,password,reset_requested_at,reset_token,role_id,roles,user_id,user_type
+0,0,john.doe@example.com,0,John Doe,hashed_password_1,,,1,ADMIN,1668,INTERNAL
+0,0,jane.smith@example.com,1,Jane Smith,hashed_password_2,2025-01-14T12:00:00,333e8400-e29b-41d4-a716-446655440003,2,USER,1669,OPERATOR

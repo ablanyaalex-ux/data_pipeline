@@ -1,0 +1,11 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "other",
+  "table": "puzzel_call_events",
+  "entity": "puzzel_call_events",
+  "merge_key": [
+    "call_id",
+    "call_sequence"
+  ],
+  "source_format": "jsonl"
+}

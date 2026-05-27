@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "other",
+  "table": "popla_users",
+  "merge_key": "user_id",
+  "dependencies": [
+    "bronze.popla_users"
+  ]
+}

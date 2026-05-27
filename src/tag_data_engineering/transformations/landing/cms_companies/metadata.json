@@ -1,0 +1,22 @@
+{
+  "entity": "cms_companies",
+  "pipeline_group": "cms",
+  "extraction_mode": "incremental",
+  "max_file_size_mb": 100,
+  "output_format": "jsonl",
+  "extractor": "mysql",
+  "extractor_config": {
+    "source_system": "cms",
+    "source_secret_key": "lumin-prod-aws-cms-mysql-credentials",
+    "source_database": "oso_api_production",
+    "source_table": "companies",
+    "incremental": {
+      "columns": [
+        {
+          "name": "updated_at",
+          "type": "DateTime"
+        }
+      ]
+    }
+  }
+}

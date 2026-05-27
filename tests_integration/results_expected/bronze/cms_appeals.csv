@@ -1,0 +1,5 @@
+account_of_events,complaint_id,created_at,factual_error,id,new_evidence,reason,rejected,rejection_reason,text,updated_at,user_id,why_evidence_makes_a_difference,why_evidence_was_unavailable,why_factual_error_makes_a_difference
+,1001,2023-02-01T10:00:00,,1,1,new-evidence,0,,I have new evidence to support my case,2023-02-01T10:00:00,1,This changes the outcome,Was not available at time of original complaint,
+,1001,2023-02-02T14:00:00,The dates in the decision are incorrect,2,0,factual-errors,0,,Company disagrees with decision,2023-02-02T14:00:00,2,,,Correct dates show we responded in time
+Consumer provided additional documentation,1002,2023-03-15T09:30:00,,3,0,new-evidence,0,,OS staff appeal on behalf of consumer,2023-03-15T09:30:00,10,,,
+,1003,2023-04-10T11:00:00,,4,0,not-listed,1,Appeal does not meet criteria,Appeal rejected - not valid,2023-04-10T11:00:00,1,,,

@@ -1,0 +1,120 @@
+[project]
+name = "tag-data-engineering"
+version = "0.1.0"
+description = "Common utilities for Spark jobs in Microsoft Fabric"
+authors = [
+    {name = "Krishan Patel", email = "kpatel@lumin.co.uk"},
+    {name = "Gem Lo", email = "glo@lumin.co.uk"},
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "azure-core==1.38.3",
+    "azure-identity~=1.25.3",
+    "azure-keyvault-secrets~=4.10.0",
+    "azure-storage-blob~=12.26.0",
+    "delta-spark>=3.3.2",
+    "minio>=7.0.0",
+    "openpyxl~=3.1.5",
+    "pandas~=2.3.0",
+    "pydantic~=2.11.0",
+    "pyodbc~=5.0",
+    "pymysql~=1.1.0",
+    "psycopg2-binary~=2.9",
+    "pyarrow~=20.0.0",
+    "pyspark~=3.5.5",
+    "requests~=2.32.4",
+    "sqlalchemy~=2.0.0",
+    "sqlglot~=26.0.0",
+    "typing_extensions>=4.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.0",
+    "click==8.3.0",
+    "ruff==0.14.1",
+    "pyrefly==0.38.2",
+    "setuptools>=61.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+tag_data_engineering = [
+    "transformations/**/*.sql",
+    "transformations/**/*.json",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--verbose",
+    "--strict-markers",
+    "--tb=short",
+    "--color=yes",
+    "-rA",
+    "--show-capture=no",
+]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s %(levelname)s %(message)s"
+log_cli_date_format = "%H:%M:%S"
+filterwarnings = [
+    "ignore::DeprecationWarning:pyspark.sql.pandas.utils",
+    "ignore::DeprecationWarning:pyspark.sql.pandas.types",
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["*/tests/*", "*/__pycache__/*", "*/.env/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
+
+[tool.ruff]
+line-length = 240
+target-version = "py38"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+]
+
+[tool.ruff.lint.isort]
+force-single-line = true
+lines-after-imports = 2
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.pyrefly]
+# Only type-check the main source code
+project_includes = ["src/"]

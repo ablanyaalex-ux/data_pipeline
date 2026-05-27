@@ -1,0 +1,13 @@
+{
+  "entity": "myhr_hierarchy_history",
+  "pipeline_group": "other",
+  "extraction_mode": "incremental",
+  "max_file_size_mb": 100,
+  "output_format": "jsonl",
+  "extractor": "blob",
+  "extractor_config": {
+    "source_container": "cascadereportuploads",
+    "source_folder": "DataEngineering/Hierarchy",
+    "blob_account_url_keyvault": "myhr-storage-credentials"
+  }
+}

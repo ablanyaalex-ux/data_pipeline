@@ -1,0 +1,23 @@
+SELECT
+    CAST(`Employee Id` AS STRING) AS employee_id,
+    CAST(`Firstname` AS STRING) AS first_name,
+    CAST(`Surname` AS STRING) AS surname,
+    CAST(`Job Title` AS STRING) AS job_title,
+    CAST(`Hierarchy Level 2` AS STRING) AS hierarchy_level_2,
+    CAST(`hierarchylevel3` AS STRING) AS hierarchy_level_3,
+    CAST(`Hierarchy Level 4` AS STRING) AS hierarchy_level_4,
+    CAST(`hierarchylevel5` AS STRING) AS hierarchy_level_5,
+    CAST(`hierarchylevel6` AS STRING) AS hierarchy_level_6,
+    SUBSTRING(SPLIT(`Line Manager`, '\\)')[0], 2) AS line_manager_id,
+    TRIM(SPLIT(`Line Manager`, '\\)')[1]) AS line_manager_name,
+    SUBSTRING(SPLIT(`Skip Line Manager`, '\\)')[0], 2) AS skip_line_manager_id,
+    TRIM(SPLIT(`Skip Line Manager`, '\\)')[1]) AS skip_line_manager_name,
+    CAST(`Place of Work` AS STRING) AS place_of_work,
+    CAST(`Office` AS STRING) AS office,
+    CAST(`windowsusername` AS STRING) AS windows_username,
+    CAST(`Sector` AS STRING) AS sector,
+    TO_DATE(CAST(`Last Contractual Day` AS TIMESTAMP)) AS last_contractual_day,
+    CAST(`Weekly Hours` AS DECIMAL(10,2)) AS weekly_hours,
+    CAST(`source_file_name` AS STRING) AS source_file_name,
+    TO_DATE(REGEXP_REPLACE(ELEMENT_AT(SPLIT(CAST(`source_file_name` AS STRING), '_'), -1), '\\.csv$', ''), 'yyyyMMdd') AS source_file_date
+FROM bronze.myhr_hierarchy_history

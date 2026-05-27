@@ -1,0 +1,4 @@
+region,holiday_date,holiday_name,notes,is_bunting
+england-and-wales,01/01/2025,New Year's Day,,True
+england-and-wales,18/04/2025,Good Friday,,False
+england-and-wales,05/05/2025,Early May bank holiday,,True

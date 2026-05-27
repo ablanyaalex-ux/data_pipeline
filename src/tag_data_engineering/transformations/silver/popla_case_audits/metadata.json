@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "other",
+  "table": "popla_case_audits",
+  "merge_key": "id",
+  "dependencies": [
+    "bronze.popla_case_audits"
+  ]
+}

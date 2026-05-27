@@ -1,0 +1,7 @@
+id,city,postcode,country,is_business,already_complaint,is_deceased
+101,London,SW1A 1AA,UK,False,False,False
+102,Manchester,M1 1AA,UK,False,True,False
+103,Birmingham,B1 1AA,UK,True,False,
+104,Leeds,LS1 1AA,UK,False,True,False
+105,Bristol,BS1 1AA,UK,False,False,False
+106,Glasgow,G1 1AA,UK,False,False,True

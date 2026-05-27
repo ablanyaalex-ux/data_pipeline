@@ -1,0 +1,9 @@
+{
+  "schema": "silver",
+  "pipeline_group": "other",
+  "table": "popla_appellant_cases",
+  "merge_key": "case_id",
+  "dependencies": [
+    "bronze.popla_appellant_cases"
+  ]
+}

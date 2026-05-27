@@ -1,0 +1,9 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "fact_case_initial_decisions",
+  "merge_key": "case_id",
+  "dependencies": [
+    "gold.fact_decisions"
+  ]
+}

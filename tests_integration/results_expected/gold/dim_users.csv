@@ -1,0 +1,7 @@
+user_id,first_name,last_name,full_name,role_id,company_id,title,is_active
+1,John,Smith,John Smith,1,,Mr,True
+2,Jane,Doe,Jane Doe,2,1.0,Ms,True
+10,Sarah,Johnson,Sarah Johnson,3,,Mrs,True
+11,Michael,Brown,Michael Brown,4,,Mr,True
+12,Emily,Wilson,Emily Wilson,5,,Ms,True
+100,Old,User,Old User,1,,,False

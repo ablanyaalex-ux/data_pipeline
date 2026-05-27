@@ -1,0 +1,8 @@
+{
+  "schema": "bronze",
+  "pipeline_group": "postgres_cms",
+  "table": "cms_tasks",
+  "entity": "cms_tasks",
+  "merge_key": "id",
+  "source_format": "jsonl"
+}

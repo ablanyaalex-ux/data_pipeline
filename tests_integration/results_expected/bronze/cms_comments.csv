@@ -1,0 +1,6 @@
+accepted,author_id,author_type,base_id,base_type,comment_type,created_at,disputed,id,parent_id,proposed,published,text,updated_at
+1.0,10,User,1001,Complaint,internal_note,2024-02-01T15:00:00,0,1,,0,1,Comment text redacted,2024-02-01T15:00:00
+1.0,11,User,1002,Complaint,internal_note,2024-01-25T16:10:00,0,2,,0,1,Comment text redacted,2024-01-25T16:10:00
+,12,User,1003,Complaint,draft,2024-02-01T11:00:00,0,3,,1,0,Comment text redacted,2024-02-01T11:00:00
+1.0,10,User,1,Decision,decision_note,2024-01-20T10:20:00,0,4,,0,1,Comment text redacted,2024-01-20T10:20:00
+0.0,1,User,1004,Complaint,internal_note,2024-02-05T17:10:00,1,5,,0,1,Comment text redacted,2024-02-05T17:10:00

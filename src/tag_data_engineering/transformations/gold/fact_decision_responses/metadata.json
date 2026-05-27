@@ -1,0 +1,12 @@
+{
+  "schema": "gold",
+  "pipeline_group": "all",
+  "table": "fact_decision_responses",
+  "merge_key": "case_id",
+  "dependencies": [
+    "gold.fact_case_initial_decisions",
+    "gold.fact_decisions",
+    "gold.fact_case_status_transitions",
+    "gold.dim_users"
+  ]
+}

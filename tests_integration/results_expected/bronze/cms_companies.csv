@@ -1,0 +1,5 @@
+active,active_types,business,business_validation,charging_arrangement,company_type,created_at,heat_trust_member,id,in_administration,is_account_number_required,name,parent_id,proposal_facility,reporting_name,symbol,term_seconds,tom_pilot_participant,tom_pilot_start_at,updated_at
+1,1,1,1,standard,1,2024-01-15T10:00:00,0,1,0,1,Energy Corp UK,,0,Energy Corp,ECU,86400.0,0,,2024-01-20T14:22:33
+1,1,0,1,tiered,2,2024-02-01T09:30:00,1,2,0,1,Water Services Ltd,,1,Water Services,WSL,43200.0,1,2024-03-01T00:00:00,2024-06-15T11:45:00
+1,0,1,0,,1,2024-02-20T08:00:00,0,3,0,0,,1.0,0,Energy Corp Wales Division,ECW,,0,,2024-02-28T16:30:00
+0,0,1,0,legacy,3,2020-01-01T00:00:00,0,4,1,0,Defunct Power Co,,0,Defunct Power,DPC,0.0,0,,2023-12-31T23:59:59
