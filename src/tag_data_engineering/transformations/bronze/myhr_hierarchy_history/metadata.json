@@ -1,6 +1,6 @@
 {
   "schema": "bronze",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "myhr_hierarchy_history",
   "entity": "myhr_hierarchy_history",
   "merge_key": [

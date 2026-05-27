@@ -1,8 +1,12 @@
 {
   "schema": "bronze",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "finance_case_fees",
   "entity": "finance_case_fees",
-  "merge_key": ["sector", "event_code", "effective_from_date"],
+  "merge_key": [
+    "sector",
+    "event_code",
+    "effective_from_date"
+  ],
   "source_format": "jsonl"
 }

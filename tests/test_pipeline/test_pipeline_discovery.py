@@ -3,6 +3,7 @@ from pathlib import Path
 
 import tag_data_engineering.transformations
 from tag_data_engineering.pipeline.models import ActivityConfig
+from tag_data_engineering.pipeline.models import IfConditionActivity
 from tag_data_engineering.pipeline.pipeline_discoverer import PipelineDiscoverer
 
 
@@ -316,24 +317,25 @@ def test_build_orchestrator_wiring(tmp_path):
     names = [a.name for a in orch.activities]
 
     assert names[0] == "setup_metadata"
-    assert "invoke_landing_alpha" in names
-    assert "invoke_bronze_alpha" in names
-    assert "invoke_silver_alpha" in names
-    assert "invoke_landing_beta" in names
-    assert "invoke_bronze_beta" in names
-    assert "invoke_silver_beta" in names
-    assert "invoke_gold" in names
+    assert "if_group_due_alpha" in names
+    assert "if_group_due_beta" in names
+    assert "if_gold_due" in names
     assert "lab_all" in names
 
     by_name = {a.name: a for a in orch.activities}
-    assert by_name["invoke_landing_alpha"].dependencies == ["setup_metadata"]
-    assert by_name["invoke_bronze_alpha"].dependencies == ["invoke_landing_alpha"]
-    assert by_name["invoke_silver_alpha"].dependencies == ["invoke_bronze_alpha"]
-    assert by_name["invoke_landing_beta"].dependencies == ["setup_metadata"]
-    assert by_name["invoke_bronze_beta"].dependencies == ["invoke_landing_beta"]
-    assert by_name["invoke_silver_beta"].dependencies == ["invoke_bronze_beta"]
-    assert set(by_name["invoke_gold"].dependencies) == {"invoke_silver_alpha", "invoke_silver_beta"}
-    assert by_name["lab_all"].dependencies == ["invoke_gold"]
+    assert by_name["if_group_due_alpha"].dependencies == ["setup_metadata"]
+    assert by_name["if_group_due_beta"].dependencies == ["setup_metadata"]
+    assert by_name["if_gold_due"].dependencies == ["if_group_due_alpha", "if_group_due_beta"]
+    assert by_name["lab_all"].dependencies == ["if_gold_due"]
+
+    alpha_gate = by_name["if_group_due_alpha"]
+    assert isinstance(alpha_gate, IfConditionActivity)
+    alpha_children = {a.name: a for a in alpha_gate.if_true_activities}
+    assert alpha_children["invoke_landing_alpha"].dependencies == []
+    assert alpha_children["invoke_bronze_alpha"].dependencies == ["invoke_landing_alpha"]
+    assert alpha_children["invoke_silver_alpha"].dependencies == ["invoke_bronze_alpha"]
+    assert alpha_children["setup_pipeline_group_success_alpha"].dependencies == ["invoke_silver_alpha"]
+    assert alpha_children["setup_pipeline_group_success_alpha"].parameters["pipeline_group"] == "alpha"
 
 
 def test_build_subpipelines_gold_group(tmp_path):
@@ -347,6 +349,28 @@ def test_build_subpipelines_gold_group(tmp_path):
     gold_activities = subs["gold_all"].activities
     assert len(gold_activities) == 1
     assert gold_activities[0].name == "gold_dim_films"
+
+
+def test_build_orchestrator_invokes_all_gold_subpipelines(tmp_path):
+    create_landing_metadata(tmp_path, "films", pipeline_group="alpha")
+    create_bronze_metadata(tmp_path, "films", entity="films", pipeline_group="alpha")
+    create_silver_metadata(tmp_path, "films", deps=["bronze.films"], pipeline_group="alpha")
+    create_gold_metadata(tmp_path, "dim_films", deps=["silver.films"], pipeline_group="all")
+    create_gold_metadata(tmp_path, "dim_other_films", deps=["silver.films"], pipeline_group="other_gold")
+
+    discoverer = PipelineDiscoverer(tmp_path)
+    subs = discoverer.build_subpipelines("test")
+    for key, sub in subs.items():
+        sub.deployed_id = f"id-{key}"
+
+    orch = discoverer.build_orchestrator("orch", subs)
+    gold_all_gate = next(a for a in orch.activities if a.name == "if_gold_due")
+    gold_other_gate = next(a for a in orch.activities if a.name == "if_gold_other_gold_due")
+    assert isinstance(gold_all_gate, IfConditionActivity)
+    assert isinstance(gold_other_gate, IfConditionActivity)
+    assert [a.name for a in gold_all_gate.if_true_activities] == ["invoke_gold"]
+    assert [a.name for a in gold_other_gate.if_true_activities] == ["invoke_gold_other_gold"]
+    assert set(next(a for a in orch.activities if a.name == "lab_all").dependencies) == {"if_gold_due", "if_gold_other_gold_due"}
 
 
 def test_build_subpipelines_activity_counts(tmp_path):
@@ -396,15 +420,15 @@ def test_build_orchestrator_wires_cross_group_dependencies(tmp_path):
     orch = discoverer.build_orchestrator("orch", subs)
     by_name = {a.name: a for a in orch.activities}
 
-    # landing_verint should depend on both setup_metadata AND silver_other
-    assert "setup_metadata" in by_name["invoke_landing_verint"].dependencies
-    assert "invoke_silver_other" in by_name["invoke_landing_verint"].dependencies
+    # landing_verint should wait for the other group gate because it depends on silver_other
+    assert "setup_metadata" in by_name["if_group_due_verint"].dependencies
+    assert "if_group_due_other" in by_name["if_group_due_verint"].dependencies
 
     # landing_other should NOT have cross-group deps (no external dependencies)
-    assert by_name["invoke_landing_other"].dependencies == ["setup_metadata"]
+    assert by_name["if_group_due_other"].dependencies == ["setup_metadata"]
 
     # lab should run once after the latest available top layer (gold if present, otherwise silver)
-    assert by_name["lab_all"].dependencies == ["invoke_silver_other"]
+    assert by_name["lab_all"].dependencies == ["if_group_due_other", "if_group_due_verint"]
 
 
 def test_repo_finance_entities_use_single_blob_landing_activity():
@@ -424,3 +448,12 @@ def test_repo_finance_entities_use_single_blob_landing_activity():
         assert f"landing_copyjob_{entity}" not in activities_by_name
         assert f"landing_copyjob_normalize_{entity}" not in activities_by_name
         assert activities_by_name[f"bronze_{entity}"].dependencies == [f"landing_{entity}"]
+
+
+def test_repo_blob_entities_are_assigned_to_weekly_blob_group():
+    repo_transformations = Path(tag_data_engineering.transformations.__file__).parent
+    jobs = PipelineDiscoverer(repo_transformations).discover_all()
+    landing_blob_jobs = [job for job in jobs if job.layer.value == "landing" and getattr(job.metadata, "extractor", None) == "blob"]
+
+    assert landing_blob_jobs
+    assert {job.pipeline_group for job in landing_blob_jobs} == {"weekly_blob"}

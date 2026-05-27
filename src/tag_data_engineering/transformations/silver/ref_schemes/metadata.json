@@ -1,6 +1,6 @@
 {
   "schema": "silver",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "ref_schemes",
   "merge_key": "sector_customer_type_id",
   "dependencies": [

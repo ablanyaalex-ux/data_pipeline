@@ -26,6 +26,7 @@ Benefits of Notebooks over Spark Job Definitions:
 """
 
 import os
+from unittest.mock import Mock
 
 import click
 from azure.identity import ClientSecretCredential
@@ -37,8 +38,10 @@ from tag_data_engineering.deployment.fabric_connection import FabricConnection
 from tag_data_engineering.deployment.fabric_deployment import deploy_fabric_copyjob
 from tag_data_engineering.deployment.fabric_deployment import deploy_fabric_notebook
 from tag_data_engineering.deployment.fabric_deployment import deploy_fabric_pipeline
+from tag_data_engineering.pipeline.models import IfConditionActivity
 from tag_data_engineering.pipeline.models import Layer
 from tag_data_engineering.pipeline.pipeline_discoverer import PipelineDiscoverer
+from tag_data_engineering.runners.setup_runner import SetupRunner
 
 
 @click.command()
@@ -72,6 +75,25 @@ def main(
         print("DRY RUN - Sub-Pipeline Definitions")
         print("=" * 80)
         total_activities = 0
+        group_configs = {config.pipeline_group: config for config in SetupRunner(connector=Mock()).load_pipeline_group_configs()}
+        blob_entities = sorted(
+            activity.entity
+            for sub_def in subpipelines.values()
+            for activity in sub_def.activities
+            if activity.layer == Layer.LANDING and getattr(activity.metadata, "extractor", None) == "blob"
+        )
+        if group_configs:
+            print("\nPipeline group cadence")
+            print("-" * 40)
+            for group, config in sorted(group_configs.items()):
+                cadence = "every run" if config.frequency_hours == 0 else f"every {config.frequency_hours}h"
+                status = "enabled" if config.enabled else "disabled"
+                print(f"  {group}: {cadence}, {status}")
+        if blob_entities:
+            print("\nBlob entities assigned to weekly_blob")
+            print("-" * 40)
+            for entity in blob_entities:
+                print(f"  - {entity}")
         for sub_def in subpipelines.values():
             count = len(sub_def.activities)
             total_activities += count
@@ -96,6 +118,11 @@ def main(
             deps = activity.dependencies if activity.dependencies else ["(none)"]
             print(f"  {activity.name}")
             print(f"    → depends on: {', '.join(deps)}")
+            if isinstance(activity, IfConditionActivity):
+                print(f"    → condition: {activity.expression}")
+                for child in activity.if_true_activities:
+                    child_deps = child.dependencies if child.dependencies else ["(none)"]
+                    print(f"      true: {child.name} depends on {', '.join(child_deps)}")
 
         print(f"\nTotal: {len(subpipelines)} sub-pipelines + 1 orchestrator = {len(subpipelines) + 1} pipelines")
         print(f"Total activities across sub-pipelines: {total_activities}")

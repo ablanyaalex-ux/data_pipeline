@@ -1,6 +1,6 @@
 {
   "entity": "puzzel_call_event_codes",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "extraction_mode": "full_refresh",
   "max_file_size_mb": 100,
   "output_format": "jsonl",

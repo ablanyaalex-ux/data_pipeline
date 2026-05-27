@@ -1,8 +1,11 @@
 {
   "schema": "bronze",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "ref_employee_aliases",
   "entity": "ref_employee_aliases",
-  "merge_key": ["employee_id", "alias_name"],
+  "merge_key": [
+    "employee_id",
+    "alias_name"
+  ],
   "source_format": "jsonl"
 }

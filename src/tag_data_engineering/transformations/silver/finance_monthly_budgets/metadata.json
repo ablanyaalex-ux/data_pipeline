@@ -1,10 +1,16 @@
 {
   "schema": "silver",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "finance_monthly_budgets",
   "entity": "finance_monthly_budgets",
-  "merge_key": ["budget_year","budget_month","budget_sector","budget_case_status","source_file_name"],
-   "dependencies": [
+  "merge_key": [
+    "budget_year",
+    "budget_month",
+    "budget_sector",
+    "budget_case_status",
+    "source_file_name"
+  ],
+  "dependencies": [
     "bronze.finance_monthly_budgets"
   ]
 }

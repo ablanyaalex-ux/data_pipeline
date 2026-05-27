@@ -9,6 +9,7 @@ from tag_data_engineering.extractors.copyjob_extractor import CopyJobExtractorCo
 from tag_data_engineering.extractors.copyjob_extractor import IncrementalConfig
 from tag_data_engineering.models import SetupMetadata
 from tag_data_engineering.pipeline.models import ActivityConfig
+from tag_data_engineering.pipeline.models import IfConditionActivity
 from tag_data_engineering.pipeline.models import InvokePipelineActivity
 from tag_data_engineering.pipeline.models import Layer
 from tag_data_engineering.pipeline.models import PipelineActivity
@@ -145,6 +146,87 @@ def test_serialize_activity_with_custom_timeout(mock_fabric_conn):
     assert activity["policy"]["timeout"] == "0.02:30:00"  # 2 hours 30 minutes
     assert activity["policy"]["retry"] == 2
     assert activity["policy"]["retryIntervalInSeconds"] == 60
+
+
+def test_serialize_notebook_activity_with_extra_parameters(mock_fabric_conn):
+    pipeline = PipelineDefinition(
+        name="test_pipeline",
+        activities=[
+            PipelineActivity(
+                layer=Layer.SETUP,
+                entity="pipeline_group_success",
+                config=ActivityConfig(),
+                metadata=SetupMetadata(),
+                parameters={
+                    "pipeline_group": "cms",
+                    "orchestrator_run_id": "@json(activity('setup_metadata').output.result.exitValue).orchestrator_run_id",
+                },
+            ),
+        ],
+    )
+
+    result = serialize_pipeline_to_fabric(
+        pipeline,
+        workspace_id="ws-123",
+        notebook_id="nb-456",
+        lakehouse_id="lh-789",
+        fabric_conn=mock_fabric_conn,
+    )
+
+    params = result["properties"]["activities"][0]["typeProperties"]["parameters"]
+    assert params["pipeline_group"] == {"value": "cms", "type": "string"}
+    assert params["orchestrator_run_id"]["type"] == "Expression"
+
+
+def test_serialize_if_condition_activity(mock_fabric_conn):
+    pipeline = PipelineDefinition(
+        name="test_pipeline",
+        activities=[
+            PipelineActivity(
+                layer=Layer.SETUP,
+                entity="metadata",
+                config=ActivityConfig(),
+                metadata=SetupMetadata(),
+            ),
+            IfConditionActivity(
+                name="if_group_due_cms",
+                expression="@contains(json(activity('setup_metadata').output.result.exitValue).due_groups, 'cms')",
+                dependencies=["setup_metadata"],
+                if_true_activities=[
+                    InvokePipelineActivity(
+                        name="invoke_landing_cms",
+                        pipeline_id="pipeline-cms",
+                        config=ActivityConfig(),
+                    ),
+                    PipelineActivity(
+                        layer=Layer.SETUP,
+                        entity="pipeline_group_success",
+                        dependencies=["invoke_landing_cms"],
+                        config=ActivityConfig(),
+                        metadata=SetupMetadata(),
+                        parameters={"pipeline_group": "cms"},
+                    ),
+                ],
+            ),
+        ],
+    )
+
+    result = serialize_pipeline_to_fabric(
+        pipeline,
+        workspace_id="ws-123",
+        notebook_id="nb-456",
+        lakehouse_id="lh-789",
+        fabric_conn=mock_fabric_conn,
+    )
+
+    activity = result["properties"]["activities"][1]
+    assert activity["name"] == "if_group_due_cms"
+    assert activity["type"] == "IfCondition"
+    assert activity["dependsOn"][0]["activity"] == "setup_metadata"
+    assert activity["typeProperties"]["expression"]["type"] == "Expression"
+    true_activities = activity["typeProperties"]["ifTrueActivities"]
+    assert [child["name"] for child in true_activities] == ["invoke_landing_cms", "setup_pipeline_group_success"]
+    assert true_activities[1]["dependsOn"][0]["activity"] == "invoke_landing_cms"
 
 
 def test_serialize_copyjob_activity_missing_id(mock_fabric_conn):
