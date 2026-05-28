@@ -9,6 +9,7 @@ from tag_data_engineering.extractors.copyjob_extractor import CopyJobExtractorCo
 from tag_data_engineering.extractors.copyjob_extractor import IncrementalConfig
 from tag_data_engineering.models import SetupMetadata
 from tag_data_engineering.pipeline.models import ActivityConfig
+from tag_data_engineering.pipeline.models import IfConditionActivity
 from tag_data_engineering.pipeline.models import InvokePipelineActivity
 from tag_data_engineering.pipeline.models import Layer
 from tag_data_engineering.pipeline.models import PipelineActivity
@@ -510,3 +511,77 @@ def test_serialize_invoke_pipeline_activity(mock_fabric_conn):
     assert len(invoke["dependsOn"]) == 1
     assert invoke["dependsOn"][0]["activity"] == "setup_metadata"
     assert invoke["dependsOn"][0]["dependencyConditions"] == ["Succeeded"]
+
+
+def test_serialize_notebook_activity_with_extra_parameters(mock_fabric_conn):
+    pipeline = PipelineDefinition(
+        name="test_pipeline",
+        activities=[
+            PipelineActivity(
+                layer=Layer.SETUP,
+                entity="pipeline_group_success",
+                parameters={
+                    "pipeline_group": "weekly_blob",
+                    "orchestrator_run_id": "@json(activity('setup_metadata').output.result.exitValue).orchestrator_run_id",
+                },
+                config=ActivityConfig(),
+                metadata=SetupMetadata(),
+            ),
+        ],
+    )
+    result = serialize_pipeline_to_fabric(
+        pipeline,
+        workspace_id="ws-123",
+        notebook_id="nb-456",
+        lakehouse_id="lh-789",
+        fabric_conn=mock_fabric_conn,
+    )
+    activity = result["properties"]["activities"][0]
+    parameters = activity["typeProperties"]["parameters"]
+    assert parameters["layer"]["value"] == "setup"
+    assert parameters["entity"]["value"] == "pipeline_group_success"
+    assert parameters["pipeline_group"]["value"] == "weekly_blob"
+    assert parameters["pipeline_group"]["type"] == "string"
+    assert parameters["orchestrator_run_id"]["value"].startswith("@json(")
+    assert parameters["orchestrator_run_id"]["type"] == "Expression"
+
+
+def test_serialize_if_condition_activity(mock_fabric_conn):
+    pipeline = PipelineDefinition(
+        name="orchestrator",
+        activities=[
+            PipelineActivity(
+                layer=Layer.SETUP,
+                entity="metadata",
+                config=ActivityConfig(),
+                metadata=SetupMetadata(),
+            ),
+            IfConditionActivity(
+                name="if_group_due_weekly_blob",
+                expression="@contains(json(activity('setup_metadata').output.result.exitValue).due_groups, 'weekly_blob')",
+                dependencies=["setup_metadata"],
+                if_true_activities=[
+                    InvokePipelineActivity(
+                        name="invoke_landing_weekly_blob",
+                        pipeline_id="pipeline-weekly",
+                        config=ActivityConfig(),
+                    )
+                ],
+            ),
+        ],
+    )
+    result = serialize_pipeline_to_fabric(
+        pipeline,
+        workspace_id="ws-123",
+        notebook_id="nb-456",
+        lakehouse_id="lh-789",
+        fabric_conn=mock_fabric_conn,
+    )
+    activities = result["properties"]["activities"]
+    if_activity = activities[1]
+    assert if_activity["name"] == "if_group_due_weekly_blob"
+    assert if_activity["type"] == "IfCondition"
+    assert if_activity["dependsOn"][0]["activity"] == "setup_metadata"
+    assert if_activity["typeProperties"]["expression"]["type"] == "Expression"
+    assert len(if_activity["typeProperties"]["ifTrueActivities"]) == 1
+    assert if_activity["typeProperties"]["ifTrueActivities"][0]["name"] == "invoke_landing_weekly_blob"

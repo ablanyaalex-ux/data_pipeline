@@ -1,6 +1,6 @@
 {
   "schema": "bronze",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "finance_weekly_forecasts",
   "entity": "finance_weekly_forecasts",
   "merge_key": ["year","wc_date","label","case_status","source_file_name"],
