@@ -1,6 +1,6 @@
 {
   "schema": "silver",
-  "pipeline_group": "other",
+  "pipeline_group": "weekly_blob",
   "table": "finance_weekly_budgets",
   "entity": "finance_weekly_budgets",
   "merge_key": ["budget_year","budget_week_commencing","budget_sector","budget_case_status", "source_file_name"],

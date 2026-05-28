@@ -49,6 +49,18 @@ BRONZE_RUNS_SCHEMA = StructType(
 )
 
 
+PIPELINE_GROUP_RUNS_SCHEMA = StructType(
+    [
+        StructField("pipeline_group", StringType(), nullable=False),
+        StructField("orchestrator_run_id", StringType(), nullable=False),
+        StructField("started_at", TimestampType(), nullable=False),
+        StructField("completed_at", TimestampType(), nullable=False),
+        StructField("status", StringType(), nullable=False),
+        StructField("error_message", StringType(), nullable=True),
+    ]
+)
+
+
 METADATA_TABLES: list[MetadataTableConfig] = [
     MetadataTableConfig(
         name="landing_runs",
@@ -59,5 +71,10 @@ METADATA_TABLES: list[MetadataTableConfig] = [
         name="bronze_runs",
         schema=BRONZE_RUNS_SCHEMA,
         partition_by=["entity"],
+    ),
+    MetadataTableConfig(
+        name="pipeline_group_runs",
+        schema=PIPELINE_GROUP_RUNS_SCHEMA,
+        partition_by=["pipeline_group"],
     ),
 ]

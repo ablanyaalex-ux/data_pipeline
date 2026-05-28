@@ -1,0 +1,34 @@
+{
+  "groups": [
+    {
+      "pipeline_group": "cms",
+      "frequency_hours": 0,
+      "enabled": true
+    },
+    {
+      "pipeline_group": "orn_ic_portal",
+      "frequency_hours": 0,
+      "enabled": true
+    },
+    {
+      "pipeline_group": "other",
+      "frequency_hours": 0,
+      "enabled": true
+    },
+    {
+      "pipeline_group": "postgres_cms",
+      "frequency_hours": 0,
+      "enabled": true
+    },
+    {
+      "pipeline_group": "verint",
+      "frequency_hours": 0,
+      "enabled": true
+    },
+    {
+      "pipeline_group": "weekly_blob",
+      "frequency_hours": 168,
+      "enabled": true
+    }
+  ]
+}

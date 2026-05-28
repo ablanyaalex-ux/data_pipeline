@@ -3,6 +3,7 @@ from pathlib import Path
 
 import tag_data_engineering.transformations
 from tag_data_engineering.pipeline.models import ActivityConfig
+from tag_data_engineering.pipeline.models import IfConditionActivity
 from tag_data_engineering.pipeline.pipeline_discoverer import PipelineDiscoverer
 
 
@@ -316,24 +317,38 @@ def test_build_orchestrator_wiring(tmp_path):
     names = [a.name for a in orch.activities]
 
     assert names[0] == "setup_metadata"
-    assert "invoke_landing_alpha" in names
-    assert "invoke_bronze_alpha" in names
-    assert "invoke_silver_alpha" in names
-    assert "invoke_landing_beta" in names
-    assert "invoke_bronze_beta" in names
-    assert "invoke_silver_beta" in names
-    assert "invoke_gold" in names
+    assert "if_group_due_alpha" in names
+    assert "if_group_due_beta" in names
+    assert "if_gold_due" in names
     assert "lab_all" in names
 
     by_name = {a.name: a for a in orch.activities}
-    assert by_name["invoke_landing_alpha"].dependencies == ["setup_metadata"]
-    assert by_name["invoke_bronze_alpha"].dependencies == ["invoke_landing_alpha"]
-    assert by_name["invoke_silver_alpha"].dependencies == ["invoke_bronze_alpha"]
-    assert by_name["invoke_landing_beta"].dependencies == ["setup_metadata"]
-    assert by_name["invoke_bronze_beta"].dependencies == ["invoke_landing_beta"]
-    assert by_name["invoke_silver_beta"].dependencies == ["invoke_bronze_beta"]
-    assert set(by_name["invoke_gold"].dependencies) == {"invoke_silver_alpha", "invoke_silver_beta"}
-    assert by_name["lab_all"].dependencies == ["invoke_gold"]
+
+    alpha_if = by_name["if_group_due_alpha"]
+    assert isinstance(alpha_if, IfConditionActivity)
+    alpha_by_name = {a.name: a for a in alpha_if.if_true_activities}
+    assert alpha_if.dependencies == ["setup_metadata"]
+    assert alpha_by_name["invoke_landing_alpha"].dependencies == []
+    assert alpha_by_name["invoke_bronze_alpha"].dependencies == ["invoke_landing_alpha"]
+    assert alpha_by_name["invoke_silver_alpha"].dependencies == ["invoke_bronze_alpha"]
+    assert alpha_by_name["setup_pipeline_group_success_alpha"].dependencies == ["invoke_silver_alpha"]
+
+    beta_if = by_name["if_group_due_beta"]
+    assert isinstance(beta_if, IfConditionActivity)
+    beta_by_name = {a.name: a for a in beta_if.if_true_activities}
+    assert beta_if.dependencies == ["setup_metadata"]
+    assert beta_by_name["invoke_landing_beta"].dependencies == []
+    assert beta_by_name["invoke_bronze_beta"].dependencies == ["invoke_landing_beta"]
+    assert beta_by_name["invoke_silver_beta"].dependencies == ["invoke_bronze_beta"]
+    assert beta_by_name["setup_pipeline_group_success_beta"].dependencies == ["invoke_silver_beta"]
+
+    gold_if = by_name["if_gold_due"]
+    assert isinstance(gold_if, IfConditionActivity)
+    assert set(gold_if.dependencies) == {"if_group_due_alpha", "if_group_due_beta"}
+    assert len(gold_if.if_true_activities) == 1
+    assert gold_if.if_true_activities[0].name == "invoke_gold"
+
+    assert by_name["lab_all"].dependencies == ["if_gold_due"]
 
 
 def test_build_subpipelines_gold_group(tmp_path):
@@ -380,7 +395,7 @@ def test_build_subpipelines_returns_cross_group_dependencies(tmp_path):
 
 
 def test_build_orchestrator_wires_cross_group_dependencies(tmp_path):
-    """Orchestrator should make invoke_landing_verint depend on invoke_silver_other."""
+    """Orchestrator should make verint group depend on the other-group condition."""
     create_landing_metadata(tmp_path, "entra_users", pipeline_group="other")
     create_bronze_metadata(tmp_path, "entra_users", entity="entra_users", pipeline_group="other")
     create_silver_metadata(tmp_path, "entra_users", deps=["bronze.entra_users"], pipeline_group="other")
@@ -396,15 +411,21 @@ def test_build_orchestrator_wires_cross_group_dependencies(tmp_path):
     orch = discoverer.build_orchestrator("orch", subs)
     by_name = {a.name: a for a in orch.activities}
 
-    # landing_verint should depend on both setup_metadata AND silver_other
-    assert "setup_metadata" in by_name["invoke_landing_verint"].dependencies
-    assert "invoke_silver_other" in by_name["invoke_landing_verint"].dependencies
+    other_if = by_name["if_group_due_other"]
+    verint_if = by_name["if_group_due_verint"]
 
-    # landing_other should NOT have cross-group deps (no external dependencies)
-    assert by_name["invoke_landing_other"].dependencies == ["setup_metadata"]
+    assert isinstance(other_if, IfConditionActivity)
+    assert isinstance(verint_if, IfConditionActivity)
 
-    # lab should run once after the latest available top layer (gold if present, otherwise silver)
-    assert by_name["lab_all"].dependencies == ["invoke_silver_other"]
+    # verint should depend on setup and upstream other-group condition
+    assert "setup_metadata" in verint_if.dependencies
+    assert "if_group_due_other" in verint_if.dependencies
+
+    # other should only depend on setup
+    assert other_if.dependencies == ["setup_metadata"]
+
+    # lab should depend on group condition activities when no gold exists
+    assert set(by_name["lab_all"].dependencies) == {"if_group_due_other", "if_group_due_verint"}
 
 
 def test_repo_finance_entities_use_single_blob_landing_activity():
@@ -424,3 +445,16 @@ def test_repo_finance_entities_use_single_blob_landing_activity():
         assert f"landing_copyjob_{entity}" not in activities_by_name
         assert f"landing_copyjob_normalize_{entity}" not in activities_by_name
         assert activities_by_name[f"bronze_{entity}"].dependencies == [f"landing_{entity}"]
+
+
+def test_repo_blob_entities_are_assigned_to_weekly_blob_group():
+    repo_transformations = Path(tag_data_engineering.transformations.__file__).parent
+    jobs = PipelineDiscoverer(repo_transformations).discover_all()
+    job_by_name = {(job.layer.value, job.entity): job for job in jobs}
+
+    assert job_by_name[("landing", "finance_weekly_budgets")].pipeline_group == "weekly_blob"
+    assert job_by_name[("landing", "finance_weekly_forecasts")].pipeline_group == "weekly_blob"
+    assert job_by_name[("bronze", "finance_weekly_budgets")].pipeline_group == "weekly_blob"
+    assert job_by_name[("bronze", "finance_weekly_forecasts")].pipeline_group == "weekly_blob"
+    assert job_by_name[("silver", "finance_weekly_budgets")].pipeline_group == "weekly_blob"
+    assert job_by_name[("silver", "finance_weekly_forecasts")].pipeline_group == "weekly_blob"
